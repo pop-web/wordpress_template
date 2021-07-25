@@ -21,3 +21,6 @@
 *.log
 *.sql
 *.sqlite
+
+**/conf
+**/logs
