@@ -27,7 +27,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'inspiro' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<?php get_template_part( 'template-parts/navigation/navigation', 'primary' ); ?>
+		うんこ<?php get_template_part( 'template-parts/navigation/navigation', 'primary' ); ?>
 	</header><!-- #masthead -->
 
 	<?php
