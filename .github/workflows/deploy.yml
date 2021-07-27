@@ -15,4 +15,4 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: rsync deploy
-        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./pf/app/public/wp-content/**/* minnano332@sv12637.xserver.jp:/home/minnano332/minnanowordpress.com/public_html/wp-content/ --exclude .htaccess
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./pf/app/public/wp-content/ minnano332@sv12637.xserver.jp:/home/minnano332/minnanowordpress.com/public_html/wp-content/ --exclude .htaccess
