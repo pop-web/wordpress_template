@@ -15,7 +15,7 @@
 **/app/public/wp-content/themes/twenty*/
 
 # ignore node dependency directories
-**/app/public/node_modules/
+**/app/public/wp-content/themes/**/node_modules/
 
 # ignore log files and databases
 *.log
