@@ -14,7 +14,7 @@ A starter theme called minnnanowordpress.
 
 == Description ==
 
-Description
+みんなのWordPres公式サイト
 
 == Installation ==
 
