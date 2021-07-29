@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package minnnanowordpress
+ * @package minnanowordpress
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function minnnanowordpress_jetpack_setup() {
+function minnanowordpress_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'minnnanowordpress_infinite_scroll_render',
+			'render'    => 'minnanowordpress_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function minnnanowordpress_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'minnnanowordpress-style',
+				'stylesheet' => 'minnanowordpress-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,12 +48,12 @@ function minnnanowordpress_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'minnnanowordpress_jetpack_setup' );
+add_action( 'after_setup_theme', 'minnanowordpress_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function minnnanowordpress_infinite_scroll_render() {
+function minnanowordpress_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

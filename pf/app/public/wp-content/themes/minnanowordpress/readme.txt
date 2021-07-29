@@ -1,4 +1,4 @@
-=== minnnanowordpress ===
+=== minnanowordpress ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -10,7 +10,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called minnnanowordpress.
+A starter theme called minnanowordpress.
 
 == Description ==
 
@@ -26,7 +26,7 @@ A starter theme called minnnanowordpress.
 
 = Does this theme support any plugins? =
 
-minnnanowordpress includes support for WooCommerce and for Infinite Scroll in Jetpack.
+minnanowordpress includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

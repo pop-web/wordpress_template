@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package minnnanowordpress
+ * @package minnanowordpress
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses minnnanowordpress_header_style()
+ * @uses minnanowordpress_header_style()
  */
-function minnnanowordpress_custom_header_setup() {
+function minnanowordpress_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'minnnanowordpress_custom_header_args',
+			'minnanowordpress_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'minnnanowordpress_header_style',
+				'wp-head-callback'   => 'minnanowordpress_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'minnnanowordpress_custom_header_setup' );
+add_action( 'after_setup_theme', 'minnanowordpress_custom_header_setup' );
 
-if ( ! function_exists( 'minnnanowordpress_header_style' ) ) :
+if ( ! function_exists( 'minnanowordpress_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see minnnanowordpress_custom_header_setup().
+	 * @see minnanowordpress_custom_header_setup().
 	 */
-	function minnnanowordpress_header_style() {
+	function minnanowordpress_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
