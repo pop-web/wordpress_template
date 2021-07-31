@@ -40,8 +40,9 @@
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
           <h1 class="fs-2 m-0 wf-sawarabimincho"><?php bloginfo('name'); ?></h1>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-text d-block text-dark">MENU</span>
         </button>
         <div class="collapse navbar-collapse w-auto" id="navbarCollapse">
           <?php
