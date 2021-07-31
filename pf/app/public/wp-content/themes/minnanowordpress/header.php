@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header class="bg-dark py-2">
-    <div class="container-fluid">
+    <div class="container">
       <?php
       $minnanowordpress_description = get_bloginfo('description', 'display');
       if ($minnanowordpress_description || is_customize_preview()) :
@@ -36,7 +36,7 @@
       <?php endif; ?>
     </div>
     <nav class="navbar navbar-expand-md navbar-dark p-0">
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
           <h1 class="fs-2 m-0 wf-sawarabimincho"><?php bloginfo('name'); ?></h1>
         </a>
