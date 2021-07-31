@@ -52,7 +52,7 @@ if (!function_exists('minnanowordpress_setup')) :
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
       array(
-        'menu-1' => esc_html__('Primary', 'minnanowordpress'),
+        'headernav' => 'ヘッダーナビ',
       )
     );
 
@@ -184,3 +184,23 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
   require get_template_directory() . '/inc/jetpack.php';
 }
+
+// wp_nav_menuのliにclass追加
+function add_additional_class_on_li($classes, $item, $args)
+{
+  if (isset($args->add_li_class)) {
+    $classes['class'] = $args->add_li_class;
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+// wp_nav_menuのaにclass追加
+function add_additional_class_on_a($classes, $item, $args)
+{
+  if (isset($args->add_li_class)) {
+    $classes['class'] = $args->add_a_class;
+  }
+  return $classes;
+}
+add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
