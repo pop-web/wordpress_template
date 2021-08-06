@@ -44,7 +44,7 @@
 				alert( acf.__('Field group title is required') );
 				
 				// focus
-				$title.focus();
+				$title.trigger('focus');
 			}
 		},
 		
@@ -180,7 +180,6 @@
 	});
 	
 })(jQuery);
-
 (function($, undefined){
 	
 	acf.FieldObject = acf.Model.extend({
@@ -407,9 +406,35 @@
 		},
 			
 		initialize: function(){
-			// do nothing
+			this.addProFields();
 		},
-		
+
+		addProFields: function() {
+			// Make sure we're only running this on free version.
+			if (acf.data.fieldTypes.hasOwnProperty('clone')) {
+				return;
+			}
+
+			// Make sure we haven't appended these fields before.
+			var $fieldTypeSelect = $('.field-type').not('.acf-free-field-type');
+
+			// Append pro fields to "Layout" group.
+			var $layoutGroup = $fieldTypeSelect.find('optgroup option[value="group"]').parent();
+			$layoutGroup.append(
+				'<option value="null" disabled="disabled">' + acf.__('Repeater (Pro only)') + '</option>' +
+				'<option value="null" disabled="disabled">' + acf.__('Flexible Content (Pro only)') + '</option>' +
+				'<option value="null" disabled="disabled">' + acf.__('Clone (Pro only)') + '</option>'
+			);
+
+			// Add pro fields to "Content" group.
+			var $contentGroup = $fieldTypeSelect.find('optgroup option[value="image"]').parent();
+			$contentGroup.append(
+				'<option value="null" disabled="disabled">' + acf.__('Gallery (Pro only)') + '</option>'
+			);
+
+			$fieldTypeSelect.addClass('acf-free-field-type');
+		},
+
 		render: function(){
 					
 			// vars
@@ -641,19 +666,24 @@
 		
 		onClickDelete: function( e, $el ){
 			
+			// Bypass confirmation when holding down "shift" key.
+			if( e.shiftKey ) {
+				return this.delete();
+			}
+
 			// add class
 			this.$el.addClass('-hover');
 			
 			// add tooltip
-			var self = this;
 			var tooltip = acf.newTooltip({
 				confirmRemove: true,
 				target: $el,
+				context: this,
 				confirm: function(){
-					self.delete( true );
+					this.delete();
 				},
 				cancel: function(){
-					self.$el.removeClass('-hover');
+					this.$el.removeClass('-hover');
 				}
 			});
 		},
@@ -709,8 +739,8 @@
 			// focus label
 			var $label = newField.$setting('label input');
 			setTimeout(function(){
-	        	$label.focus();
-	        }, 251);
+				$label.trigger('focus');
+			}, 251);
 			
 			// update newField label / name
 			var label = newField.prop('label');
@@ -719,7 +749,7 @@
 			var copy = acf.__('copy');
 			
 			// increase suffix "1"
-			if( $.isNumeric(end) ) {
+			if( acf.isNumeric(end) ) {
 				var i = (end*1) + 1;
 				label = label.replace( end, i );
 				name = name.replace( end, i );
@@ -989,7 +1019,6 @@
 	});
 	
 })(jQuery);
-
 (function($, undefined){
 	
 	/**
@@ -1238,7 +1267,6 @@
 	acf.registerFieldSetting( TimePickerReturnFormatFieldSetting );
 	
 })(jQuery);
-
 (function($, undefined){
 	
 	/**
@@ -1434,7 +1462,7 @@
 			conditionTypes.map(function( model ){
 				choices.push({
 					id:		model.prototype.operator,
-					text:	acf.strEscape(model.prototype.label)
+					text:	model.prototype.label
 				});
 			});
 			
@@ -1642,7 +1670,6 @@
 		},
 	});
 })(jQuery);
-
 (function($, undefined){
 	
 	/**
@@ -2095,7 +2122,7 @@
 			// focus label
 			var $label = newField.$input('label');
 			setTimeout(function(){
-	        	$label.focus();
+	        	$label.trigger('focus');
 	        }, 251);
 	        
 	        // open
@@ -2111,7 +2138,6 @@
 	});
 	
 })(jQuery);
-
 (function($, undefined){
 	
 	/**
@@ -2216,7 +2242,6 @@
 	});
 	
 })(jQuery);
-
 (function($, undefined){
 	
 	var _acf = acf.getCompatibility( acf );
@@ -2498,11 +2523,3 @@
 	});
 	
 })(jQuery);
-
-// @codekit-prepend "_field-group.js";
-// @codekit-prepend "_field-group-field.js";
-// @codekit-prepend "_field-group-settings.js";
-// @codekit-prepend "_field-group-conditions.js";
-// @codekit-prepend "_field-group-fields.js";
-// @codekit-prepend "_field-group-locations.js";
-// @codekit-prepend "_field-group-compatibility.js";

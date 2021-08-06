@@ -12,7 +12,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="h-100">
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
@@ -22,7 +22,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class("d-flex flex-column h-100"); ?>>
   <?php wp_body_open(); ?>
   <header class="bg-dark py-2">
     <div class="container">
