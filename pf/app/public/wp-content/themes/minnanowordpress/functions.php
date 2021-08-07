@@ -213,6 +213,8 @@ function disable_gutenberg($use_block_editor, $post_type)
 }
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg', 10, 2);
 
+
+//ウィジェットブロックエディターの停止
 function my_remove_widgets_block_editor()
 {
   remove_theme_support('widgets-block-editor');

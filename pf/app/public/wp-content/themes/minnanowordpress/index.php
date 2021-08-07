@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<main id="primary" class="container mt-5">
+<main id="primary" class="container my-5">
   <?php
   if (have_posts()) :
 
