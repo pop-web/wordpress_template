@@ -212,3 +212,9 @@ function disable_gutenberg($use_block_editor, $post_type)
   return $use_block_editor;
 }
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg', 10, 2);
+
+function my_remove_widgets_block_editor()
+{
+  remove_theme_support('widgets-block-editor');
+}
+add_action('after_setup_theme', 'my_remove_widgets_block_editor');
