@@ -14,9 +14,9 @@ if (!function_exists('minnanowordpress_posted_on')) :
    */
   function minnanowordpress_posted_on()
   {
-    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    $time_string = '<time class="entry-date published updated small" datetime="%1$s"><i class="bi bi-clock me-1"></i>%2$s</time>';
     if (get_the_time('U') !== get_the_modified_time('U')) {
-      $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+      $time_string = '<time class="entry-date published small" datetime="%1$s"><i class="bi bi-clock me-1"></i>%2$s</time><time class="updated small ms-2" datetime="%3$s"><i class="bi bi-arrow-clockwise me-1"></i>%4$s</time>';
     }
 
     $time_string = sprintf(
@@ -30,7 +30,7 @@ if (!function_exists('minnanowordpress_posted_on')) :
     $posted_on = sprintf(
       /* translators: %s: post date. */
       esc_html_x('%s', 'post date', 'minnanowordpress'),
-      '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+      $time_string
     );
 
     echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -67,52 +67,53 @@ if (!function_exists('minnanowordpress_entry_footer')) :
       $categories_list = get_the_category_list(esc_html__(', ', 'minnanowordpress'));
       if ($categories_list) {
         /* translators: 1: list of categories. */
-        printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'minnanowordpress') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        printf('<span class="cat-links small">' . esc_html__('%1$s', 'minnanowordpress') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
       }
 
+      // TODO: タグリンクとコメントリンク非表示
       /* translators: used between list items, there is a space after the comma */
-      $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'minnanowordpress'));
-      if ($tags_list) {
-        /* translators: 1: list of tags. */
-        printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'minnanowordpress') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-      }
+      // $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'minnanowordpress'));
+      // if ($tags_list) {
+      //   /* translators: 1: list of tags. */
+      //   printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'minnanowordpress') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      // }
     }
 
-    if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
-      echo '<span class="comments-link">';
-      comments_popup_link(
-        sprintf(
-          wp_kses(
-            /* translators: %s: post title */
-            __('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'minnanowordpress'),
-            array(
-              'span' => array(
-                'class' => array(),
-              ),
-            )
-          ),
-          wp_kses_post(get_the_title())
-        )
-      );
-      echo '</span>';
-    }
+    // if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
+    //   echo '<span class="comments-link">';
+    //   comments_popup_link(
+    //     sprintf(
+    //       wp_kses(
+    //         /* translators: %s: post title */
+    //         __('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'minnanowordpress'),
+    //         array(
+    //           'span' => array(
+    //             'class' => array(),
+    //           ),
+    //         )
+    //       ),
+    //       wp_kses_post(get_the_title())
+    //     )
+    //   );
+    //   echo '</span>';
+    // }
 
-    edit_post_link(
-      sprintf(
-        wp_kses(
-          /* translators: %s: Name of current post. Only visible to screen readers */
-          __('Edit <span class="screen-reader-text">%s</span>', 'minnanowordpress'),
-          array(
-            'span' => array(
-              'class' => array(),
-            ),
-          )
-        ),
-        wp_kses_post(get_the_title())
-      ),
-      '<span class="edit-link">',
-      '</span>'
-    );
+    // edit_post_link(
+    //   sprintf(
+    //     wp_kses(
+    //       /* translators: %s: Name of current post. Only visible to screen readers */
+    //       __('Edit <span class="screen-reader-text">%s</span>', 'minnanowordpress'),
+    //       array(
+    //         'span' => array(
+    //           'class' => array(),
+    //         ),
+    //       )
+    //     ),
+    //     wp_kses_post(get_the_title())
+    //   ),
+    //   '<span class="edit-link">',
+    //   '</span>'
+    // );
   }
 endif;
 
@@ -138,7 +139,8 @@ if (!function_exists('minnanowordpress_post_thumbnail')) :
 
     <?php else : ?>
 
-      <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+      <!-- TODO: ブログindexではサムネ非表示 -->
+      <!-- <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
         <?php
         the_post_thumbnail(
           'post-thumbnail',
@@ -151,7 +153,7 @@ if (!function_exists('minnanowordpress_post_thumbnail')) :
           )
         );
         ?>
-      </a>
+      </a> -->
 
 <?php
     endif; // End is_singular().

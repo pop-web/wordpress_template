@@ -18,9 +18,17 @@
     else :
       the_title('<h2 class="entry-title fw-bold"><a href="' . esc_url(get_permalink()) . '" rel="bookmark" class="text-decoration-none text-dark">', '</a></h2>');
     endif;
-
-    if ('post' === get_post_type()) :
     ?>
+
+    <?php if ('post' === get_post_type()) : ?>
+      <div class="text-end">
+        <div class="entry-meta">
+          <?php
+          minnanowordpress_posted_on();
+          // minnanowordpress_posted_by();
+          ?>
+        </div><!-- .entry-meta -->
+      </div>
     <?php endif; ?>
   </header><!-- .entry-header -->
 
@@ -53,14 +61,7 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-footer text-end">
-    <?php if ('post' === get_post_type()) : ?>
-      <div class="entry-meta">
-        <?php
-        minnanowordpress_posted_on();
-        // minnanowordpress_posted_by();
-        ?>
-      </div><!-- .entry-meta -->
-    <?php endif; ?>
+
     <?php minnanowordpress_entry_footer(); ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
