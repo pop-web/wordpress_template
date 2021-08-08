@@ -51,6 +51,7 @@
               'theme_location' => 'headernav',
               'container' => false,
               'menu_class' => 'navbar-nav me-auto mb-2 mb-md-0',
+              'fallback_cb' => false,
               'add_li_class' => 'nav-item',
               'add_a_class' => 'nav-link text-white'
             )

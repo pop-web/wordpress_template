@@ -205,16 +205,6 @@ function add_additional_class_on_a($classes, $item, $args)
 }
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 
-
-// ACFの設定がうまく動作しないため、特定の投稿タイプのgutenbergを無効化
-function disable_gutenberg($use_block_editor, $post_type)
-{
-  if ($post_type === 'themelist') return false;
-  return $use_block_editor;
-}
-add_filter('use_block_editor_for_post_type', 'disable_gutenberg', 10, 2);
-
-
 //ウィジェットブロックエディターの停止
 function my_remove_widgets_block_editor()
 {

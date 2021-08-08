@@ -12,7 +12,7 @@ get_header();
     <div id="theme">
       <h2 class="rich_font text-center fs-1">
         <span class="px-5 pb-3 d-block mx-auto">WordPressテーマ</span>
-        <span class="border-bottom d-block w-25 mx-auto mb-4"></span>
+        <span class="border-bottom d-block w-25 mx-auto mb-5"></span>
       </h2>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php

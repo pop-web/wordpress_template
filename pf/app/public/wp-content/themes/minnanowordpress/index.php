@@ -17,6 +17,10 @@ get_header();
 ?>
 
 <main id="primary" class="container my-5">
+  <h2 class="rich_font text-center fs-1">
+    <span class="px-5 pb-3 d-block mx-auto">お知らせ</span>
+    <span class="border-bottom d-block w-25 mx-auto mb-5"></span>
+  </h2>
   <?php
   if (have_posts()) :
 
