@@ -131,9 +131,9 @@ function minnanowordpress_widgets_init()
       'name'          => esc_html__('Sidebar', 'minnanowordpress'),
       'id'            => 'sidebar-1',
       'description'   => esc_html__('Add widgets here.', 'minnanowordpress'),
-      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'before_widget' => '<section id="%1$s" class="widget %2$s mb-4">',
       'after_widget'  => '</section>',
-      'before_title'  => '<h2 class="widget-title">',
+      'before_title'  => '<h2 class="widget-title fs-4">',
       'after_title'   => '</h2>',
     )
   );
