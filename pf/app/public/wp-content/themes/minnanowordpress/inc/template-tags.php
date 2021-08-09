@@ -64,11 +64,18 @@ if (!function_exists('minnanowordpress_entry_footer')) :
     // Hide category and tag text for pages.
     if ('post' === get_post_type()) {
       /* translators: used between list items, there is a space after the comma */
-      $categories_list = get_the_category_list(esc_html__(', ', 'minnanowordpress'));
-      if ($categories_list) {
-        /* translators: 1: list of categories. */
-        printf('<span class="cat-links small">' . esc_html__('%1$s', 'minnanowordpress') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      // $categories_list = get_the_category_list(esc_html__(', ', 'minnanowordpress'));
+      // if ($categories_list) {
+      //   /* translators: 1: list of categories. */
+      //   printf('<span class="cat-links small">' . esc_html__('%1$s', 'minnanowordpress') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      // }
+
+      $categories = get_the_category();
+      foreach ($categories as $cat) {
+        $categories_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-2 py-1 bg-dark text-white " href="' . get_category_link($cat->term_id) . '"><i class="bi bi-folder-fill"></i>
+        ' . esc_html($cat->name) . '</a>';
       }
+      printf('<div class="small mt-1">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $categories_list);
 
       // TODO: タグリンクとコメントリンク非表示
       /* translators: used between list items, there is a space after the comma */
