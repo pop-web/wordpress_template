@@ -53,6 +53,7 @@ if (!function_exists('minnanowordpress_setup')) :
     register_nav_menus(
       array(
         'headernav' => 'ヘッダーナビ',
+        'footernav' => 'フッターナビ',
       )
     );
 

@@ -35,7 +35,7 @@ get_header();
     endif;
     ?>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 pe-5">
       <?php
       /* Start the Loop */
       while (have_posts()) :

@@ -12,16 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("mb-5"); ?>>
   <header class="entry-header">
-    <?php
-    if (is_singular()) :
-      the_title('<h1 class="entry-title">', '</h1>');
-    else :
-      the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark" class="text-decoration-none text-dark">', '</a></h2>');
-    endif;
-
-    if ('post' === get_post_type()) :
-    ?>
-    <?php endif; ?>
+    <?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark" class="text-decoration-none text-dark">', '</a></h2>'); ?>
   </header><!-- .entry-header -->
 
   <?php minnanowordpress_post_thumbnail(); ?>
