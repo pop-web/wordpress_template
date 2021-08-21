@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
-    <?php the_title('<h2 class="rich_font text-center fs-1"><span class="px-5 pb-3 d-block mx-auto">', '</span><span class="border-bottom d-block w-25 mx-auto mb-5"></span></h2>'); ?>
+    <?php the_title('<h2 class="fs-4 fw-bold mb-5">', '</h2>'); ?>
   </header><!-- .entry-header -->
 
   <?php minnanowordpress_post_thumbnail(); ?>

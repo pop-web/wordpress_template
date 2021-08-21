@@ -30,3 +30,49 @@ a:hover {
     font-size: 0.6em;
   }
 }
+
+// widget CSS
+section.widget {
+  margin-bottom: 2em;
+  .widget-title {
+    font-size: calc(1.275rem + 0.3vw) !important;
+    background-color: #f5f6f7 !important;
+    padding: 0.6em 0.5em;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      a {
+        text-decoration: none;
+        padding: 0.4em 0.2em;
+        display: block;
+        color: #212529 !important;
+      }
+    }
+  }
+  .search-form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    label {
+      width: 78%;
+      .search-field {
+        width: 100%;
+        padding: 8px 11px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+    }
+    .search-submit {
+      width: 20%;
+      padding: 8px 11px;
+      cursor: pointer;
+      border-color: #212529;
+      color: #fff;
+      background-color: #212529;
+      border-radius: 0.25rem;
+    }
+  }
+}

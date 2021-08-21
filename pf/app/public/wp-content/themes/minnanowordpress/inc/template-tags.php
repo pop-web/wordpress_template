@@ -71,19 +71,19 @@ if (!function_exists('minnanowordpress_entry_footer')) :
       // }
 
       $categories = get_the_category();
+      $categories_list = "";
       foreach ($categories as $cat) {
         $categories_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-2 py-1 bg-dark text-white " href="' . get_category_link($cat->term_id) . '"><i class="bi bi-folder-fill"></i>
         ' . esc_html($cat->name) . '</a>';
       }
       printf('<div class="small mt-1">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $categories_list);
 
-      // TODO: タグリンクとコメントリンク非表示
       /* translators: used between list items, there is a space after the comma */
-      // $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'minnanowordpress'));
-      // if ($tags_list) {
-      //   /* translators: 1: list of tags. */
-      //   printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'minnanowordpress') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-      // }
+      $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'minnanowordpress'));
+      if ($tags_list) {
+        /* translators: 1: list of tags. */
+        printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'minnanowordpress') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      }
     }
 
     // if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
@@ -105,22 +105,22 @@ if (!function_exists('minnanowordpress_entry_footer')) :
     //   echo '</span>';
     // }
 
-    // edit_post_link(
-    //   sprintf(
-    //     wp_kses(
-    //       /* translators: %s: Name of current post. Only visible to screen readers */
-    //       __('Edit <span class="screen-reader-text">%s</span>', 'minnanowordpress'),
-    //       array(
-    //         'span' => array(
-    //           'class' => array(),
-    //         ),
-    //       )
-    //     ),
-    //     wp_kses_post(get_the_title())
-    //   ),
-    //   '<span class="edit-link">',
-    //   '</span>'
-    // );
+    edit_post_link(
+      sprintf(
+        wp_kses(
+          /* translators: %s: Name of current post. Only visible to screen readers */
+          __('Edit <span class="screen-reader-text">%s</span>', 'minnanowordpress'),
+          array(
+            'span' => array(
+              'class' => array(),
+            ),
+          )
+        ),
+        wp_kses_post(get_the_title())
+      ),
+      '<div class="edit-link">',
+      '</div>'
+    );
   }
 endif;
 
