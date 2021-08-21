@@ -23,8 +23,8 @@ get_header();
 
         the_post_navigation(
           array(
-            'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'minnanowordpress') . '</span> <span class="nav-title">%title</span>',
-            'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'minnanowordpress') . '</span> <span class="nav-title">%title</span>',
+            'prev_text' => '<span class="nav-subtitle"><i class="bi bi-caret-left-fill"></i></span> <span class="nav-title">%title</span>',
+            'next_text' => '<span class="nav-title">%title</span> <span class="nav-subtitle"><i class="bi bi-caret-right-fill"></i> </span>',
           )
         );
 

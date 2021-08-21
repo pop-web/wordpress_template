@@ -75,4 +75,21 @@ section.widget .search-form .search-submit {
 	border-radius: 0.25rem;
 }
 
+.nav-links > div {
+	margin-bottom: 0.5em;
+}
+
+.nav-links > div > a {
+	text-decoration: none;
+	color: #212529;
+}
+
+.nav-links .nav-next {
+	text-align: right;
+}
+
+#comments {
+	margin-top: 2em;
+}
+
 /*# sourceMappingURL=style.css.map */

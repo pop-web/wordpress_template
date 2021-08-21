@@ -72,17 +72,26 @@ if (!function_exists('minnanowordpress_entry_footer')) :
 
       $categories = get_the_category();
       $categories_list = "";
-      foreach ($categories as $cat) {
-        $categories_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-2 py-1 bg-dark text-white " href="' . get_category_link($cat->term_id) . '"><i class="bi bi-folder-fill"></i>
-        ' . esc_html($cat->name) . '</a>';
+      if ($categories) {
+        foreach ($categories as $cat) {
+          $categories_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-2 py-1 bg-dark text-white " href="' . get_category_link($cat->term_id) . '"><i class="bi bi-folder-fill"></i>
+          ' . esc_html($cat->name) . '</a>';
+        }
       }
-      printf('<div class="small mt-1">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $categories_list);
+      printf('<div class="small mt-2">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $categories_list);
 
       /* translators: used between list items, there is a space after the comma */
-      $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'minnanowordpress'));
+      $tags = get_the_tags();
+      $tags_list = "";
+      if ($tags) {
+        foreach ($tags as $tag) {
+          $tags_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-2 py-1 bg-white text-dark border border-dark" href="' . get_category_link($tag->term_id) . '"><i class="bi bi-tag"></i>
+          ' . esc_html($tag->name) . '</a>';
+        }
+      }
       if ($tags_list) {
         /* translators: 1: list of tags. */
-        printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'minnanowordpress') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        printf('<div class="small mt-2">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
       }
     }
 

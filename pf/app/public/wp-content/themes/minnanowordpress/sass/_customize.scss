@@ -76,3 +76,23 @@ section.widget {
     }
   }
 }
+
+// Prev Next
+.nav-links {
+  > div {
+    margin-bottom: 0.5em;
+    > a {
+      text-decoration: none;
+      color: #212529;
+    }
+  }
+
+  .nav-next {
+    text-align: right;
+  }
+}
+
+// comments
+#comments {
+  margin-top: 2em;
+}
