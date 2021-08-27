@@ -14,12 +14,12 @@ get_header();
 <main id="primary" class="container my-5">
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 pe-md-5">
       <?php if (have_posts()) : ?>
 
         <header class="page-header">
           <?php
-          the_archive_title('<h1 class="page-title">', '</h1>');
+          the_archive_title('<h1 class="page-title fs-4 fw-bold mb-5">', '</h1>');
           the_archive_description('<div class="archive-description">', '</div>');
           ?>
         </header><!-- .page-header -->

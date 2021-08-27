@@ -331,14 +331,14 @@ function get_search_form($args = array())
 					<span class="screen-reader-text">' . _x('Search for:', 'label') . '</span>
 					<input type="search" class="search-field" placeholder="' . esc_attr_x('Search &hellip;', 'placeholder') . '" value="' . get_search_query() . '" name="s" />
 				</label>
-				<input type="submit" class="search-submit" value="' . esc_attr_x('Search', 'submit button') . '" />
+				<button type="submit" class="search-submit"><i class="bi bi-search"></i></button>
 			</form>';
     } else {
       $form = '<form role="search" ' . $aria_label . 'method="get" id="searchform" class="searchform" action="' . esc_url(home_url('/')) . '">
 				<div>
 					<label class="screen-reader-text" for="s">' . _x('Search for:', 'label') . '</label>
 					<input type="text" value="' . get_search_query() . '" name="s" id="s" />
-					<input type="submit" id="searchsubmit" value="' . esc_attr_x('Search', 'submit button') . '" />
+					<button type="submit" class="search-submit"><i class="bi bi-search fa-lg"></i></button>
 				</div>
 			</form>';
     }
