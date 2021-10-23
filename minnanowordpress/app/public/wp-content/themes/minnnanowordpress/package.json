@@ -1,0 +1,15 @@
+{
+  "name": "minnnanowordpress",
+  "version": "1.0.0",
+  "description": "みんなWordPress",
+  "author": "POP",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1"
+  }
+}
