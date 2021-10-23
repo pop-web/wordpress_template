@@ -13,6 +13,7 @@
 
 # ignore specific themes
 **/app/public/wp-content/themes/twenty*/
+**/app/public/wp-content/themes/_*/
 
 # ignore node dependency directories
 **/app/public/wp-content/themes/**/node_modules/
