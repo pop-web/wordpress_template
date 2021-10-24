@@ -1,17 +1,19 @@
-var gulp = require("gulp");
-var browserSync = require("browser-sync").create();
+const gulp = require("gulp");
+const browserSync = require("browser-sync").create();
 const sass = require("gulp-sass")(require("node-sass"));
+const sassGlob = require("gulp-sass-glob");
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task("sass", function () {
   return gulp
-    .src("scss/*.scss")
+    .src("scss/**/*.scss")
+    .pipe(sassGlob())
     .pipe(sass())
     .pipe(gulp.dest("./"))
     .pipe(browserSync.stream());
 });
 
-// Static Server + watching scss/html files
+// Static Server + watching scss/php files
 gulp.task(
   "serve",
   gulp.series("sass", function () {
@@ -19,7 +21,7 @@ gulp.task(
       proxy: "minnanowordpress.local",
     });
 
-    gulp.watch("scss/*.scss", gulp.series("sass"));
+    gulp.watch("scss/**/*.scss", gulp.series("sass"));
     gulp.watch("./*.php").on("change", browserSync.reload);
   })
 );

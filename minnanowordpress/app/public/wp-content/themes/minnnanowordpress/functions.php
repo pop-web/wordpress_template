@@ -21,4 +21,4 @@ function theme_style()
 {
   wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), VERSION);
 }
-add_action('after_setup_theme', 'theme_style');
+add_action('wp_enqueue_scripts', 'theme_style');

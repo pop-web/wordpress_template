@@ -1,5 +1,4 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+// Foundation
+@import "foundation/**";
 
-a {
-  color: red;
-}
+@import "utility/**";
