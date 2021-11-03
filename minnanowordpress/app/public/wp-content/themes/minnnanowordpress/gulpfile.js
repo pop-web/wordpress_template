@@ -4,7 +4,7 @@ const sass = require("gulp-sass")(require("node-sass"));
 const sassGlob = require("gulp-sass-glob");
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task("sass", function () {
+gulp.task("sass", () => {
   return gulp
     .src("scss/**/*.scss")
     .pipe(sassGlob())
@@ -16,8 +16,9 @@ gulp.task("sass", function () {
 // Static Server + watching scss/php files
 gulp.task(
   "serve",
-  gulp.series("sass", function () {
+  gulp.series("sass", () => {
     browserSync.init({
+      // proxyオプションは開くアプリケーションのサーバーのURLを指定
       proxy: "minnanowordpress.local",
     });
 
