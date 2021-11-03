@@ -8,8 +8,6 @@
 
 get_header();
 ?>
-
-
 <main class="container my-5">
   <?php if (is_home() && !is_front_page()) : ?>
     <header>

@@ -45,7 +45,7 @@
         <?php
         else :
         ?>
-          <p><a class="fs-2 navbar-brand me-2" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+          <div class="wf-sawarabimincho"><a class="fs-2 navbar-brand me-2" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></div>
         <?php
         endif;
         ?>
