@@ -47,37 +47,36 @@ function themelist_post_type()
       'public'        => true,  // カスタム投稿タイプの表示(trueにする)
       'has_archive'   => true, // カスタム投稿一覧(true:表示/false:非表示)
       'menu_position' => 5,     // 管理画面上での表示位置
-      'show_in_rest'  => true,  // true:「Gutenberg」/ false:「ClassicEditor」
+      'show_in_rest'  => false,  // true:「Gutenberg」/ false:「ClassicEditor」
       'supports' => $supports
     ]
   );
 }
 add_action('init', 'themelist_post_type');
 
-function insert_custom_fields()
-{
-  global $post;
-  $themelist = get_post_meta($post->ID, 'price', true);
-?>
-
-  <form method="post" action="admin.php?page=site_settings">
-    <label for="price">価格</label>
-    <input id="price" type="text" name="price" value="<?php echo $themelist ?>">
-  </form>
-
-<?php
-}
 function create_custom_fields()
 {
   add_meta_box(
     'themelist_setting', //編集画面セクションID
-    'サンプルカスタムフィールド', //編集画面セクションのタイトル
+    'テーマ情報', //編集画面セクションのタイトル
     'insert_custom_fields', //編集画面セクションにHTML出力する関数
     'themelist', //投稿タイプ名
     'normal' //編集画面セクションが表示される部分
   );
 }
 add_action('admin_menu', 'create_custom_fields');
+
+function insert_custom_fields()
+{
+  global $post;
+  $price = get_post_meta($post->ID, 'price', true);
+?>
+
+  <label for="price">価格</label>
+  <input id="price" type="text" name="price" value="<?php echo $price ?>">
+
+<?php
+}
 
 function save_custom_fields($post_id)
 {
