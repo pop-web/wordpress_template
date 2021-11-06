@@ -18,7 +18,7 @@ get_header();
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <?php
       $args = array(
-        'post_type' => 'themelist',
+        'post_type' => 'theme',
         'posts_per_page' => '-1'
       );
       $query = new WP_query($args);
@@ -28,10 +28,27 @@ get_header();
           <div class="col">
             <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark">
               <div class="card h-100">
-                <?php if (get_post_meta($post->ID, "price", true)) {
-                  echo get_post_meta($post->ID, "price", true);
-                }
-                ?>
+
+                <?php
+                if (get_post_meta($post->ID, "image", true)) : ?>
+                  <div>
+                    <img src="<?php echo get_post_meta($post->ID, "image", true); ?>">
+                  </div>
+                <?php endif; ?>
+                <div>
+                  <?php
+                  if (get_post_meta($post->ID, "price", true)) {
+                    echo get_post_meta($post->ID, "price", true);
+                  }
+                  ?>
+                </div>
+                <div>
+                  <?php
+                  if (get_post_meta($post->ID, "description", true)) {
+                    echo get_post_meta($post->ID, "description", true);
+                  }
+                  ?>
+                </div>
               </div>
             </a>
           </div>
