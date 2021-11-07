@@ -1,7 +1,7 @@
 <?php
 
-global $wp_rewrite;
-$wp_rewrite->flush_rules();
+// global $wp_rewrite;
+// $wp_rewrite->flush_rules();
 
 /**
  * minnanowordpress functions and definitions
@@ -23,6 +23,17 @@ function add_api()
 }
 add_action('admin_enqueue_scripts', 'add_api');
 
+// title タグの出力
+add_theme_support('title-tag');
+
+// メニュー
+register_nav_menus(
+  array(
+    'headernav' => 'ヘッダーナビ',
+    'footernav' => 'フッターナビ',
+  )
+);
+
 /**
  * Load theme style
  *
@@ -30,7 +41,13 @@ add_action('admin_enqueue_scripts', 'add_api');
  */
 function theme_style()
 {
-  wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), VERSION);
+  // bootstrap.min.css
+  wp_enqueue_style('bootstrap-style', "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", array(), VERSION);
+  // bootstrap-icons.css
+  wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css", array('bootstrap-style'), VERSION);
+  wp_enqueue_style('theme-style', get_stylesheet_uri(), array('bootstrap-style'), VERSION);
+  // bootstrap.bundle.min.js
+  wp_enqueue_script('bootstrap-script', "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js", array(), VERSION);
 }
 add_action('wp_enqueue_scripts', 'theme_style');
 
@@ -48,7 +65,7 @@ function theme_post_type()
     'thumbnail', //アイキャッチ画像
     //'author', //投稿者
     //'excerpt', //抜粋
-    'revisions', //リビジョンを保存
+    // 'revisions', //リビジョンを保存
   );
   register_post_type(
     'theme', // 投稿タイプ名の定義
@@ -92,7 +109,7 @@ function insert_custom_fields()
 ?>
   <p>
   <div id="media">
-    <img src="<?php echo $image; ?>" alt="">
+    <img src="<?php echo $image; ?>" style="max-width:500px">
   </div>
   <input style="display:none" name="image" type="text" value="<?php echo $image ?>" />
   <input style="width:80px" type="button" name="media" value="画像選択" />
@@ -104,7 +121,7 @@ function insert_custom_fields()
   </p>
   <p>
     <label for="description" style="display: block;">説明</label>
-    <textarea id="description" name="description" value="<?php echo $description ?>" rows="5" style="width:100%;"></textarea>
+    <input id="description" type="text" name="description" value="<?php echo $description ?>" style="width:100%;">
   </p>
 
   <script>
@@ -136,7 +153,7 @@ function insert_custom_fields()
             $("input:text[name=image]").val(""); //テキストフォームをクリア
             $("#media").empty(); //id mediaタグの中身をクリア
             $("input:text[name=image]").val(file.attributes.url); //テキストフォームに選択したURLを追加
-            $("#media").append('<img src="' + file.attributes.url + '" />'); //プレビュー用にメディアアップローダーで選択した画像を表示させる
+            $("#media").append('<img src="' + file.attributes.url + '" style="max-width:500px"/>'); //プレビュー用にメディアアップローダーで選択した画像を表示させる
           });
         });
         custom_uploader.open();

@@ -20,7 +20,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
   <?php wp_body_open(); ?>
   <header class="bg-dark py-2">
     <div class="container">
@@ -41,11 +41,15 @@
         the_custom_logo();
         if (is_front_page() && is_home()) :
         ?>
-          <h1 class="wf-sawarabimincho"><a class="fs-2 navbar-brand p-0" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+          <a class="fs-2 navbar-brand m-0" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+            <h1 class="fs-2 m-0 wf-sawarabimincho"><?php bloginfo('name'); ?></h1>
+          </a>
         <?php
         else :
         ?>
-          <div class="wf-sawarabimincho"><a class="fs-2 navbar-brand me-2" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></div>
+          <a class="fs-2 navbar-brand m-0" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+            <div class="fs-2 m-0 wf-sawarabimincho"><?php bloginfo('name'); ?></div>
+          </a>
         <?php
         endif;
         ?>
@@ -54,16 +58,14 @@
           <span class="navbar-toggler-icon"></span>
           <span class="navbar-toggler-text d-block text-dark">MENU</span>
         </button>
-        <div class="collapse navbar-collapse w-auto" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
           <?php
           wp_nav_menu(
             array(
               'theme_location' => 'headernav',
               'container' => false,
-              'menu_class' => 'navbar-nav me-auto mb-2 mb-md-0',
+              'menu_class' => 'navbar-nav mb-2 ms-auto',
               'fallback_cb' => false,
-              'add_li_class' => 'nav-item',
-              'add_a_class' => 'nav-link text-white'
             )
           );
           ?>
