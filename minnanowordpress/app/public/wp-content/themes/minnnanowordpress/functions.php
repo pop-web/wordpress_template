@@ -14,6 +14,30 @@ if (!defined('VERSION')) {
   define('VERSION', '1.0.0');
 }
 
+function widgets_init()
+{
+  register_sidebar(
+    array(
+      'name'          => esc_html__('Sidebar', 'minnanowordpress'),
+      'id'            => 'sidebar-1',
+      'description'   => esc_html__('Add widgets here.', 'minnanowordpress'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
+}
+add_action('widgets_init', 'widgets_init');
+
+
+//ウィジェットブロックエディターの停止
+function my_remove_widgets_block_editor()
+{
+  remove_theme_support('widgets-block-editor');
+}
+add_action('after_setup_theme', 'my_remove_widgets_block_editor');
+
 /**
  * JavaScript APIの呼び出し
  **/

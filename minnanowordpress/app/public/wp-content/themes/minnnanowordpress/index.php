@@ -10,8 +10,8 @@ get_header();
 ?>
 <main class="container my-5">
   <?php if (is_home() && !is_front_page()) : ?>
-    <header>
-      <h1 class="">
+    <header class="fs-4 fw-bold mb-5 serif_font">
+      <h1>
         <?php single_post_title(); ?>
       </h1>
     </header>
@@ -22,8 +22,30 @@ get_header();
 
         <?php while (have_posts()) : ?>
           <?php the_post(); ?>
-          <p class=""><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+
+          <article id="post-<?php the_ID(); ?>" <?php post_class("mb-5"); ?>>
+            <header>
+              <?php the_title('<h2><a href="' . esc_url(get_permalink()) . '" rel="bookmark" class="text-decoration-none text-dark">', '</a></h2>'); ?>
+            </header>
+
+            <?php the_content(); ?>
+
+            <footer class="text-end">
+              <?php if ('post' === get_post_type()) : ?>
+                <div class="">
+                  <?php
+                  //minnanowordpress_posted_on();
+                  // minnanowordpress_posted_by();
+                  ?>
+                </div>
+              <?php endif; ?>
+              <?php //minnanowordpress_entry_footer(); 
+              ?>
+            </footer>
+          </article>
+
         <?php endwhile; ?>
+
         <?php the_posts_navigation(); ?>
 
       <?php else : ?>

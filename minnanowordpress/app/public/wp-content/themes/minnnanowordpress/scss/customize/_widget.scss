@@ -1,0 +1,47 @@
+// widget CSS
+#widget-area {
+  section.widget {
+    margin-bottom: 2em;
+    .widget-title {
+      font-size: calc(1.275rem + 0.3vw) !important;
+      background-color: #f5f6f7 !important;
+      padding: 0.6em 0.5em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        a {
+          text-decoration: none;
+          padding: 0.4em 0.2em;
+          display: block;
+          color: #212529 !important;
+        }
+      }
+    }
+  }
+
+  #searchform {
+    position: relative;
+    div {
+      display: flex;
+      justify-content: space-between;
+      #s {
+        width: calc(100% - 70px);
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        font-size: 18px;
+      }
+      input[type="submit"] {
+        width: 65px;
+        padding: 0.5em;
+        cursor: pointer;
+        border-color: #212529;
+        color: #fff;
+        background-color: #212529;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+}

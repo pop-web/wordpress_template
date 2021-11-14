@@ -2,9 +2,10 @@
   <div class="container">
     <?php wp_nav_menu(
       array(
+        'menu_id' => 'footer-menu',
         'theme_location' => 'footernav',
         'container' => false,
-        'menu_class' => 'd-flex list-unstyled mb-0',
+        'menu_class' => 'd-flex justify-content-end list-unstyled mb-2 small',
         'fallback_cb' => false
       )
     );
