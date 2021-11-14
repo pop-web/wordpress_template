@@ -16,8 +16,8 @@ get_header();
     <div class="col-md-8">
       <?php if (have_posts()) : ?>
 
-        <header class="page-header">
-          <h1 class="page-title fs-4 fw-bold mb-5">
+        <header>
+          <h1 class="fs-4 fw-bold mb-5">
             <?php
             /* translators: %s: search query. */
             printf(esc_html__('&#8220;%s&#8221; の検索結果'), '<span>' . get_search_query() . '</span>');
@@ -47,5 +47,4 @@ get_header();
 </main>
 
 <?php
-get_sidebar();
 get_footer();

@@ -31,7 +31,7 @@ function widgets_init()
 add_action('widgets_init', 'widgets_init');
 
 
-//ウィジェットブロックエディターの停止
+// ウィジェットブロックエディターの停止
 function my_remove_widgets_block_editor()
 {
   remove_theme_support('widgets-block-editor');
@@ -75,6 +75,32 @@ function theme_style()
 }
 add_action('wp_enqueue_scripts', 'theme_style');
 
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if (defined('JETPACK__VERSION')) {
+  require get_template_directory() . '/inc/jetpack.php';
+}
 
 /**
  * Post Type: テーマ
