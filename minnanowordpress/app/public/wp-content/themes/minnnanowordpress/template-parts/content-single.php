@@ -15,7 +15,7 @@
     <?php the_title('<h1>', '</h1>'); ?>
     <?php if ('post' === get_post_type()) : ?>
       <div class="text-end">
-        <div class="">
+        <div>
           <?php
           //minnanowordpress_posted_on();
           // minnanowordpress_posted_by();

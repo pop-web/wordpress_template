@@ -22,8 +22,8 @@ get_header();
 
         <?php the_post_navigation(
           array(
-            'prev_text' => '<span class=""><i class="bi bi-caret-left-fill"></i></span> <span class="">%title</span>',
-            'next_text' => '<span class="">%title</span> <span class=""><i class="bi bi-caret-right-fill"></i> </span>',
+            'prev_text' => '<span><i class="bi bi-caret-left-fill"></i></span> <span>%title</span>',
+            'next_text' => '<span>%title</span> <span><i class="bi bi-caret-right-fill"></i> </span>',
           )
         ); ?>
 

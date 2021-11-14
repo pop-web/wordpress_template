@@ -19,7 +19,7 @@
 
   <footer class="text-end">
     <?php if ('post' === get_post_type()) : ?>
-      <div class="">
+      <div>
         <?php
         posted_on();
         posted_by();
