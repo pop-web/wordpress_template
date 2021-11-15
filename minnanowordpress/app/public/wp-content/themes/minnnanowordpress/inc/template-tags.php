@@ -16,7 +16,7 @@ if (!function_exists('posted_on')) :
   {
     $time_string = '<time datetime="%1$s"><i class="bi bi-clock me-1"></i>%2$s</time>';
     if (get_the_time('U') !== get_the_modified_time('U')) {
-      $time_string = '<time datetime="%1$s"><i class="bi bi-clock me-1"></i>%2$s</time><time class="updated ms-2" datetime="%3$s"><i class="bi bi-arrow-clockwise me-1"></i>%4$s</time>';
+      $time_string = '<time datetime="%1$s"><i class="bi bi-clock me-1"></i>%2$s</time><time class="ms-2" datetime="%3$s"><i class="bi bi-arrow-clockwise me-1"></i>%4$s</time>';
     }
 
     $time_string = sprintf(
@@ -30,7 +30,7 @@ if (!function_exists('posted_on')) :
     $posted_on = sprintf(
       /* translators: %s: post date. */
       esc_html_x('%s', 'post date'),
-      '<a href="' . esc_url(get_permalink()) . '" rel="bookmark" class="text-decoration-none text-dark">' . $time_string . '</a>'
+      $time_string
     );
 
     echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -46,8 +46,8 @@ if (!function_exists('posted_by')) :
   {
     $byline = sprintf(
       /* translators: %s: post author. */
-      esc_html_x('by %s', 'post author', '_s'),
-      '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+      esc_html_x('%s', 'post author'),
+      '<span class="author vcard"><i class="bi bi-vector-pen me-1"></i><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
     );
 
     echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -63,18 +63,28 @@ if (!function_exists('entry_footer')) :
   {
     // Hide category and tag text for pages.
     if ('post' === get_post_type()) {
-      /* translators: used between list items, there is a space after the comma */
-      $categories_list = get_the_category_list(esc_html__(', ', '_s'));
-      if ($categories_list) {
-        /* translators: 1: list of categories. */
-        printf('<span class="cat-links">' . esc_html__('Posted in %1$s', '_s') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      $categories = get_the_category();
+      $categories_list = "";
+      if ($categories) {
+        foreach ($categories as $cat) {
+          $categories_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-2 py-1 bg-dark text-white " href="' . get_category_link($cat->term_id) . '"><i class="bi bi-folder-fill"></i>
+          ' . esc_html($cat->name) . '</a>';
+        }
       }
+      printf('<div class="small mt-2">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $categories_list);
 
       /* translators: used between list items, there is a space after the comma */
-      $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', '_s'));
+      $tags = get_the_tags();
+      $tags_list = "";
+      if ($tags) {
+        foreach ($tags as $tag) {
+          $tags_list .= '<a class="inline-block rounded text-decoration-none ms-1 px-1 py-1 bg-white text-dark border border-dark small" href="' . get_category_link($tag->term_id) . '"><i class="bi bi-tag-fill"></i>
+          ' . esc_html($tag->name) . '</a>';
+        }
+      }
       if ($tags_list) {
         /* translators: 1: list of tags. */
-        printf('<span class="tags-links">' . esc_html__('タグ: %s') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        printf('<div class="small mt-2">' . esc_html__('%1$s', 'minnanowordpress') . '</div>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
       }
     }
 

@@ -16,16 +16,16 @@
     <?php if ('post' === get_post_type()) : ?>
       <div class="text-end">
         <div>
-          <?php
-          //minnanowordpress_posted_on();
-          // minnanowordpress_posted_by();
-          ?>
+          <?php posted_on(); ?>
+        </div>
+        <div>
+          <?php posted_by(); ?>
         </div>
       </div>
     <?php endif; ?>
   </header>
 
-  <?php //minnanowordpress_post_thumbnail();
+  <?php post_thumbnail();
   ?>
 
   <div class="mt-3">
@@ -54,9 +54,7 @@
     ?>
   </div>
 
-  <footer class="entry-footer text-end">
-
-    <?php //minnanowordpress_entry_footer(); 
-    ?>
+  <footer class="text-end">
+    <?php entry_footer(); ?>
   </footer>
 </article>

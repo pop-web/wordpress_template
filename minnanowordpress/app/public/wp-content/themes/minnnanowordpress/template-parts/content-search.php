@@ -15,21 +15,20 @@
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
       <?php the_title(sprintf('<h2><a href="%s" rel="bookmark" class="text-decoration-none text-dark">', esc_url(get_permalink())), '</a></h2>'); ?>
-      <div>
-        <?php
-        // minnanowordpress_posted_on();
-        // minnanowordpress_posted_by();
-        ?>
-      </div>
     </header>
 
-    <?php //minnanowordpress_post_thumbnail();
-    ?>
+    <?php post_thumbnail(); ?>
 
     <?php the_excerpt(); ?>
 
     <footer class="text-end">
-      <?php //minnanowordpress_entry_footer();
+      <div>
+        <?php
+        posted_on();
+        posted_by();
+        ?>
+      </div>
+      <?php entry_footer();
       ?>
     </footer>
   </article>
