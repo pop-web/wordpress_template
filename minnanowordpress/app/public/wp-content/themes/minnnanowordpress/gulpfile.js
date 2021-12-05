@@ -18,8 +18,10 @@ gulp.task(
   "serve",
   gulp.series("sass", () => {
     browserSync.init({
+      port: 3333,
       // proxyオプションは開くアプリケーションのサーバーのURLを指定
-      proxy: "minnanowordpress.local",
+      // proxy: "minnanowordpress.local",
+      proxy: "localhost:10003",
     });
 
     gulp.watch("scss/**/*.scss", gulp.series("sass"));
