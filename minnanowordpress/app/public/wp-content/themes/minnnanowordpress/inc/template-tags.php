@@ -47,7 +47,7 @@ if (!function_exists('posted_by')) :
     $byline = sprintf(
       /* translators: %s: post author. */
       esc_html_x('%s', 'post author'),
-      '<span class="author vcard"><i class="bi bi-vector-pen me-1"></i><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+      '<span class="author vcard"><i class="bi bi-person-fill me-1"></i><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
     );
 
     echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -120,8 +120,8 @@ if (!function_exists('entry_footer')) :
         ),
         wp_kses_post(get_the_title())
       ),
-      '<span class="edit-link">',
-      '</span>'
+      '<div class="edit-link">',
+      '</div>'
     );
   }
 endif;
