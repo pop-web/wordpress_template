@@ -38,6 +38,18 @@ function my_remove_widgets_block_editor()
 }
 add_action('after_setup_theme', 'my_remove_widgets_block_editor');
 
+// 冒頭抜粋文の文字数変更
+function custom_excerpt_length( $length ) {
+  return 100;	//表示したい文字数
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length');
+
+// 抜粋文の文末[…]の変更
+function new_excerpt_more($more) {
+	return '…'; //変更後の内容
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 /**
  * JavaScript APIの呼び出し
  **/
