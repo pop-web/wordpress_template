@@ -50,15 +50,6 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-/**
- * JavaScript APIの呼び出し
- **/
-function add_api()
-{
-  wp_enqueue_media();
-}
-add_action('admin_enqueue_scripts', 'add_api');
-
 // title タグの出力
 add_theme_support('title-tag');
 
@@ -131,7 +122,7 @@ function theme_post_type()
   //投稿時に使用できる投稿用のパーツを指定
   $supports = array(
     'title', //タイトルフォーム
-    //'editor', //エディター(内容の編集)
+    'editor', //エディター(内容の編集)
     'thumbnail', //アイキャッチ画像
     //'author', //投稿者
     //'excerpt', //抜粋
@@ -146,7 +137,7 @@ function theme_post_type()
       'public'        => true,  // カスタム投稿タイプの表示(trueにする)
       'has_archive'   => true, // カスタム投稿一覧(true:表示/false:非表示)
       'menu_position' => 5,     // 管理画面上での表示位置
-      'show_in_rest'  => false,  // true:「Gutenberg」/ false:「ClassicEditor」
+      'show_in_rest'  => true,  // true:「Gutenberg」/ false:「ClassicEditor」
       'supports' => $supports
     ]
   );
@@ -178,12 +169,13 @@ function insert_custom_fields()
   $description = get_post_meta($post->ID, 'description', true);
 ?>
   <p>
-  <div id="media">
-    <img src="<?php echo $image; ?>" style="max-width:500px">
-  </div>
-  <input style="display:none" name="image" type="text" value="<?php echo $image ?>" />
-  <input style="width:80px" type="button" name="media" value="画像選択" />
-  <input style="width:80px" type="button" name="media-clear" value="削除" />
+    <label for="image" style="display: block;">メイン画像</label>
+    <div id="media">
+      <img src="<?php echo $image; ?>" style="max-width:500px">
+    </div>
+    <input style="display:none" name="image" type="text" value="<?php echo $image ?>" />
+    <input style="width:80px" type="button" name="media" value="画像選択" />
+    <input style="width:80px" type="button" name="media-clear" value="削除" />
   </p>
   <p>
     <label for="price" style="display: block;">価格</label>
@@ -218,7 +210,6 @@ function insert_custom_fields()
           var images = custom_uploader.state().get("selection");
           /* file の中に選択された画像の各種情報が入っている */
           images.each(function(file) {
-            console.log(file)
 
             $("input:text[name=image]").val(""); //テキストフォームをクリア
             $("#media").empty(); //id mediaタグの中身をクリア
