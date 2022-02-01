@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: サイトフロント
+ * Template Name: サイトフロントページ
  *
  * @package sophie
  */
@@ -17,12 +17,12 @@ get_header();
     </h1>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <?php
-      $args = array(
-        'post_type' => 'theme',
-        'posts_per_page' => '-1'
-      );
-      $query = new WP_query($args);
-      if ($query->have_posts()) :
+        $args = array(
+          'post_type' => 'theme',
+          'posts_per_page' => '-1'
+        );
+        $query = new WP_query($args);
+        if ($query->have_posts()) :
       ?>
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <div class="col">

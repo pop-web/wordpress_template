@@ -1,1 +1,84 @@
 @charset "UTF-8";
+@import 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sawarabi+Mincho&display=swap';
+a:hover {
+  opacity: 0.7;
+  transition: opacity 0.5s ease; }
+
+.wf-sawarabimincho {
+  font-family: 'Sawarabi Mincho'; }
+
+.wf-kosugimaru {
+  font-family: 'Kosugi Maru', sans-serif; }
+
+.serif_font {
+  font-family: 'Times New Roman', '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+  font-weight: 500; }
+
+#footer-menu li {
+  margin-left: 1rem; }
+  #footer-menu li a {
+    color: #6c757d !important;
+    text-decoration: none; }
+
+.nav-links > div {
+  margin-bottom: 0.5em; }
+  .nav-links > div > a {
+    text-decoration: none;
+    color: #212529; }
+
+.nav-links .nav-next {
+  text-align: right; }
+
+#comments {
+  margin-top: 2em; }
+
+.navbar-dark .navbar-toggler {
+  background-color: #f0f0f1; }
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'\a     xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(51, 51, 51, 1)'\a     stroke-width='3' stroke-linecap='round'  stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+
+@media (min-width: 768px) {
+  #header-nav li {
+    margin-left: 1rem; }
+    #header-nav li:first-child {
+      margin-left: 0; } }
+
+#header-nav li a {
+  text-decoration: none;
+  color: #212529; }
+
+#widget-area section.widget {
+  margin-bottom: 2em; }
+  #widget-area section.widget .widget-title {
+    font-size: calc(1.275rem + 0.3vw) !important;
+    background-color: #f5f6f7 !important;
+    padding: 0.6em 0.5em; }
+  #widget-area section.widget ul {
+    list-style: none;
+    padding: 0; }
+    #widget-area section.widget ul li a {
+      text-decoration: none;
+      padding: 0.4em 0.2em;
+      display: block;
+      color: #212529 !important; }
+
+#widget-area #searchform {
+  position: relative; }
+  #widget-area #searchform div {
+    display: flex;
+    justify-content: space-between; }
+    #widget-area #searchform div #s {
+      width: calc(100% - 70px);
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      font-size: 18px; }
+    #widget-area #searchform div input[type="submit"] {
+      width: 65px;
+      padding: 0.5em;
+      cursor: pointer;
+      border-color: #212529;
+      color: #fff;
+      background-color: #212529;
+      border-radius: 0.25rem; }

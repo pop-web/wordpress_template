@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: サイトフロント
+ * Template Name: サイトフロントページ
  *
  * @package minnanowordpress
  */
