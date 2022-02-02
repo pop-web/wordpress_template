@@ -39,14 +39,16 @@ function my_remove_widgets_block_editor()
 add_action('after_setup_theme', 'my_remove_widgets_block_editor');
 
 // 冒頭抜粋文の文字数変更
-function custom_excerpt_length( $length ) {
-  return 100;	//表示したい文字数
+function custom_excerpt_length($length)
+{
+  return 100;  //表示したい文字数
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length');
+add_filter('excerpt_length', 'custom_excerpt_length');
 
 // 抜粋文の文末[…]の変更
-function new_excerpt_more($more) {
-	return '…'; //変更後の内容
+function new_excerpt_more($more)
+{
+  return '…'; //変更後の内容
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -68,13 +70,10 @@ register_nav_menus(
  */
 function theme_style()
 {
-  // bootstrap.min.css
-  wp_enqueue_style('bootstrap-style', "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", array(), VERSION);
+  wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), VERSION);
+  wp_enqueue_script('theme-script', get_theme_file_uri('js/dist/main.bundle.js'),  array(), VERSION);
   // bootstrap-icons.css
-  wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css", array('bootstrap-style'), VERSION);
-  wp_enqueue_style('theme-style', get_stylesheet_uri(), array('bootstrap-style'), VERSION);
-  // bootstrap.bundle.min.js
-  wp_enqueue_script('bootstrap-script', "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js", array(), VERSION);
+  wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css", array(), VERSION);
 }
 add_action('wp_enqueue_scripts', 'theme_style');
 
