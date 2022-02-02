@@ -1,19 +1,36 @@
+#brand-title {
+  a {
+    color: #3e3e3e;
+  }
+}
+
 // スマホハンバーガーメニュー
-.navbar-dark {
+#header-nav {
   .navbar-toggler {
     background-color: #f0f0f1;
+    &:focus {
+      box-shadow: none;
+    }
   }
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'
     xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(51, 51, 51, 1)'
     stroke-width='3' stroke-linecap='round'  stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
-}
-
-#header-nav {
+  #tel-phone {
+    a,
+    .bi-telephone-fill::before {
+      color: #3e3e3e;
+    }
+  }
+  #access-btn {
+    background-color: #b4c7dd;
+    border: none;
+  }
   @media (min-width: 768px) {
     li {
-      margin-left: 1rem;
+      line-height: 1.5;
+      margin-left: 3rem;
       &:first-child {
         margin-left: 0;
       }
@@ -22,7 +39,7 @@
   li {
     a {
       text-decoration: none;
-      color: #212529;
+      color: $blue-700;
     }
   }
 }

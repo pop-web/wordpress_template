@@ -1,20 +1,19 @@
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  mode: 'production', // 本番用（開発ならdevelopment（圧縮されない））
-  entry: './js/src/main.js', // バンドル前のエントリポイント
+  mode: 'production',
+  entry: './js/src/main.js',
   output: {
-    // バンドル先
-    filename: 'main.bundle.js',
+    // バンドル後の名前
+    filename: 'bundle.js',
   },
   optimization: {
     minimizer: [
-      // js圧縮
       new TerserPlugin({
-        extractComments: 'all', // コメント削除
+        extractComments: 'all',
         terserOptions: {
           compress: {
-            drop_console: true, // console.log削除
+            drop_console: true,
           },
         },
       }),
