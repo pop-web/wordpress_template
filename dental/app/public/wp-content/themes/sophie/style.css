@@ -7815,6 +7815,9 @@ a:hover {
   opacity: 0.7;
   transition: opacity 0.5s ease; }
 
+.bg-sub {
+  background-color: #f0f3f7; }
+
 .wf-sawarabimincho {
   font-family: 'Sawarabi Mincho'; }
 
@@ -7859,19 +7862,20 @@ a:hover {
   color: #3e3e3e; }
 
 #header-nav #access-btn {
-  background-color: #b4c7dd;
+  background-color: #295282;
   border: none; }
 
 @media (min-width: 768px) {
   #header-nav li {
     line-height: 1.5;
-    margin-left: 3rem; }
+    margin-left: 1.5rem;
+    font-size: 15px; }
     #header-nav li:first-child {
       margin-left: 0; } }
 
 #header-nav li a {
   text-decoration: none;
-  color: #084298; }
+  color: #295282; }
 
 #widget-area section.widget {
   margin-bottom: 2em; }

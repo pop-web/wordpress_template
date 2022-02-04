@@ -24,13 +24,14 @@
     }
   }
   #access-btn {
-    background-color: #b4c7dd;
+    background-color: #295282;
     border: none;
   }
   @media (min-width: 768px) {
     li {
       line-height: 1.5;
-      margin-left: 3rem;
+      margin-left: 1.5rem;
+      font-size: 15px;
       &:first-child {
         margin-left: 0;
       }
@@ -39,7 +40,7 @@
   li {
     a {
       text-decoration: none;
-      color: $blue-700;
+      color: #295282;
     }
   }
 }
