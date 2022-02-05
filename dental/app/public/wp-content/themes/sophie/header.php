@@ -24,19 +24,26 @@
 
 <body class="d-flex flex-column h-100 wf-kosugimaru">
   <?php wp_body_open(); ?>
-  <header class="bg-white py-4">
-    <nav class="navbar navbar-expand-md p-0">
+  <header class="bg-white">
+    <?php if (get_header_image()) : ?>
+      <div class="text-center">
+        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+          <img src="<?php header_image(); ?>" width="<?php echo absint(get_custom_header()->width); ?>" height="<?php echo absint(get_custom_header()->height); ?>" alt="">
+        </a>
+      </div>
+    <?php endif; ?>
+    <nav class="navbar navbar-expand-md px-0 py-4">
       <div class="container align-items-end">
         <div>
           <?php
           $minnanowordpress_description = get_bloginfo('description', 'display');
           if ($minnanowordpress_description || is_customize_preview()) :
           ?>
-            <div class="small text-secondary">
+            <div class="site-description small text-secondary">
               <?php echo $minnanowordpress_description; ?>
             </div>
           <?php endif; ?>
-          <div id="brand-title">
+          <div id="site-title" class="site-title">
             <?php
             the_custom_logo(); // TODO
             if (is_front_page() && is_home()) :
