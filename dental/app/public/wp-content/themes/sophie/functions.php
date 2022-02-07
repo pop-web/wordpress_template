@@ -113,6 +113,7 @@ function widgets_init()
 }
 add_action('widgets_init', 'widgets_init');
 
+
 // ウィジェットブロックエディターの停止
 function my_remove_widgets_block_editor()
 {
@@ -134,10 +135,6 @@ function new_excerpt_more($more)
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-
-
-
-
 /**
  * Load theme style
  *
@@ -151,7 +148,6 @@ function theme_style()
   wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css", array(), VERSION);
 }
 add_action('wp_enqueue_scripts', 'theme_style');
-
 
 /*
 * Enable support for Post Thumbnails on posts and pages.

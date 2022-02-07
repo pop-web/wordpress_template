@@ -7,7 +7,7 @@
  */
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * テーマカスタマイザーのサイトタイトルと説明文にpostMessageのサポートを追加
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -56,8 +56,10 @@ function customize_partial_blogdescription()
   bloginfo('description');
 }
 
+
+
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * テーマカスタマイザーのプレビューが非同期に変更を再読み込みするようにJSハンドラをバインド
  */
 function customize_preview_js()
 {

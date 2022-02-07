@@ -5,7 +5,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package sophie
  */
 
 if (!function_exists('posted_on')) :

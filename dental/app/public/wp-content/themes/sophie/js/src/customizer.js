@@ -2,9 +2,9 @@
 /**
  * File customizer.js.
  *
- * Theme Customizer enhancements for a better user experience.
+ * テーマカスタマイザーを強化し、ユーザーエクスペリエンスを向上
  *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ * テーマカスタマイザープレビューの変更を非同期で再読み込みするためのハンドラを含む
  */
 
 (function ($) {
