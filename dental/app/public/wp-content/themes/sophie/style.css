@@ -7828,23 +7828,23 @@ a:hover {
   font-family: 'Times New Roman', '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
   font-weight: 500; }
 
+@media (min-width: 768px) {
+  #footer-nav li {
+    line-height: 1.5;
+    margin-left: 1.5rem;
+    font-size: 15px; }
+    #footer-nav li:first-child {
+      margin-left: 0; } }
+
+#footer-nav li a {
+  text-decoration: none;
+  color: #295282; }
+
 #footer .site-info {
   font-size: 13px;
   color: #104088; }
   #footer .site-info a {
     color: #104088; }
-
-.nav-links > div {
-  margin-bottom: 0.5em; }
-  .nav-links > div > a {
-    text-decoration: none;
-    color: #212529; }
-
-.nav-links .nav-next {
-  text-align: right; }
-
-#comments {
-  margin-top: 2em; }
 
 #site-title a {
   color: #3e3e3e; }
@@ -7876,6 +7876,18 @@ a:hover {
 #header-nav li a {
   text-decoration: none;
   color: #295282; }
+
+.nav-links > div {
+  margin-bottom: 0.5em; }
+  .nav-links > div > a {
+    text-decoration: none;
+    color: #212529; }
+
+.nav-links .nav-next {
+  text-align: right; }
+
+#comments {
+  margin-top: 2em; }
 
 #widget-area section.widget {
   margin-bottom: 2em; }
