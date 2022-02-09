@@ -33,6 +33,45 @@ function customize_register($wp_customize)
       )
     );
   }
+
+  // 店舗情報設
+  $wp_customize->add_section(
+    'shop_info',
+    array(
+      'title'    => '店舗情報',
+      'priority' => 1,
+    )
+  );
+
+  $wp_customize->add_setting('shop_tel');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'shop_control_1',
+      array(
+        'label'    => '電話番号',
+        'section'  => 'shop_info',
+        'settings' => 'shop_tel',
+        'priority' => 1,
+        'type'     => 'tel',
+      )
+    )
+  );
+
+  $wp_customize->add_setting('shop_address');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'shop_control_2',
+      array(
+        'label'    => '住所',
+        'section'  => 'shop_info',
+        'settings' => 'shop_address',
+        'priority' => 2,
+        'type'     => 'text',
+      )
+    )
+  );
 }
 add_action('customize_register', 'customize_register');
 

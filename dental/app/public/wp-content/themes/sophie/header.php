@@ -6,7 +6,7 @@
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  *
- * @package minnanowordpress
+ * @package sophie
  */
 
 ?>
@@ -60,10 +60,17 @@
         </div>
         <div id="header-nav">
           <nav class="navbar-nav align-items-center justify-content-end mb-2">
-            <div id="tel-phone">
-              <i class="bi bi-telephone-fill"></i>
-              <a href="tel:0312345678" class="fs-3 text-decoration-none">03-1234-5678</a>
-            </div>
+            <?php if (get_theme_mod('shop_tel')) : ?>
+              <div id="tel-phone">
+                <i class="bi bi-telephone-fill"></i>
+                <a href="tel:<?php echo get_theme_mod("shop_tel") ?>" class="fs-3 text-decoration-none">
+                  <?php
+                  $tel = get_theme_mod('shop_tel');
+                  echo format_phone_number($tel)
+                  ?>
+                </a>
+              </div>
+            <?php endif; ?>
             <a href="" id="access-btn" class="btn btn-primary rounded-pill px-4 py-1 ms-4">
               <i class="bi bi-geo-alt"></i>
               アクセス

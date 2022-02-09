@@ -183,7 +183,10 @@ if (defined('JETPACK__VERSION')) {
   require get_template_directory() . '/inc/jetpack.php';
 }
 
-
+/**
+ * Format Phone Number
+ */
+require get_template_directory() . '/inc/format-phone-number.php';
 
 // $starter_content = [
 //   'posts' => [
