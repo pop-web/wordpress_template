@@ -145,7 +145,7 @@ function theme_style()
   wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), VERSION);
   wp_enqueue_script('theme-script', get_theme_file_uri('js/dist/bundle.js'),  array(), VERSION);
   // bootstrap-icons.css
-  wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css", array(), VERSION);
+  wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css", array(), VERSION);
 }
 add_action('wp_enqueue_scripts', 'theme_style');
 

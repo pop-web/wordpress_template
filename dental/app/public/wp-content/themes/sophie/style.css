@@ -7828,6 +7828,32 @@ a:hover {
   font-family: 'Times New Roman', '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
   font-weight: 500; }
 
+#footer-content {
+  margin-top: 4rem; }
+  #footer-content .schedule {
+    color: #104088; }
+    #footer-content .schedule .table-schedule {
+      width: 100%;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 16px; }
+      #footer-content .schedule .table-schedule tr {
+        border-bottom: 1px solid #104088; }
+        #footer-content .schedule .table-schedule tr th,
+        #footer-content .schedule .table-schedule tr td {
+          padding: 0.7rem 1.3rem;
+          letter-spacing: 0.1em; }
+        #footer-content .schedule .table-schedule tr th {
+          padding-top: 0; }
+      #footer-content .schedule .table-schedule + p {
+        font-size: 14px;
+        margin: 0.8rem 0 0 0; }
+  #footer-content .shop-info {
+    color: #104088; }
+    #footer-content .shop-info .address {
+      font-size: 18px;
+      letter-spacing: 0.1em; }
+
 @media (min-width: 768px) {
   #footer-nav li {
     line-height: 1.5;
@@ -7839,6 +7865,16 @@ a:hover {
 #footer-nav li a {
   text-decoration: none;
   color: #295282; }
+
+#sns-nav li {
+  line-height: 1.5;
+  margin-left: 0.5rem;
+  font-size: 18px; }
+  #sns-nav li:first-child {
+    margin-left: 0; }
+  #sns-nav li a {
+    text-decoration: none;
+    color: #295282; }
 
 #footer .site-info {
   font-size: 13px;
