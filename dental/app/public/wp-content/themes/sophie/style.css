@@ -7829,7 +7829,7 @@ a:hover {
   font-weight: 500; }
 
 #footer-content {
-  margin-top: 4rem; }
+  max-width: 1000px; }
   #footer-content .schedule {
     color: #104088; }
     #footer-content .schedule .table-schedule {
@@ -7841,7 +7841,7 @@ a:hover {
         border-bottom: 1px solid #104088; }
         #footer-content .schedule .table-schedule tr th,
         #footer-content .schedule .table-schedule tr td {
-          padding: 0.7rem 1.3rem;
+          padding: 0.7rem 1.1rem;
           letter-spacing: 0.1em; }
         #footer-content .schedule .table-schedule tr th {
           padding-top: 0; }
@@ -7854,33 +7854,69 @@ a:hover {
       font-size: 18px;
       letter-spacing: 0.1em; }
 
-@media (min-width: 768px) {
-  #footer-nav li {
-    line-height: 1.5;
-    margin-left: 1.5rem;
-    font-size: 15px; }
-    #footer-nav li:first-child {
-      margin-left: 0; } }
-
-#footer-nav li a {
-  text-decoration: none;
-  color: #295282; }
-
-#sns-nav li {
-  line-height: 1.5;
-  margin-left: 0.5rem;
-  font-size: 18px; }
-  #sns-nav li:first-child {
-    margin-left: 0; }
-  #sns-nav li a {
+#footer-nav-wrap .container {
+  max-width: 1000px; }
+  @media (min-width: 768px) {
+    #footer-nav-wrap .container #footer-nav li {
+      line-height: 1.5;
+      margin-left: 1.5rem;
+      font-size: 15px; }
+      #footer-nav-wrap .container #footer-nav li:first-child {
+        margin-left: 0; } }
+  #footer-nav-wrap .container #footer-nav li a {
     text-decoration: none;
     color: #295282; }
+  #footer-nav-wrap .container #sns-nav li {
+    line-height: 1.5;
+    margin-left: 0.5rem;
+    font-size: 18px; }
+    #footer-nav-wrap .container #sns-nav li:first-child {
+      margin-left: 0; }
+    #footer-nav-wrap .container #sns-nav li a {
+      text-decoration: none;
+      color: #295282; }
 
 #footer .site-info {
   font-size: 13px;
   color: #104088; }
   #footer .site-info a {
     color: #104088; }
+
+#front-page {
+  color: #104088; }
+  #front-page .page-link-btn a {
+    background-color: #8d9cad; }
+  #front-page #service .container {
+    max-width: 1000px; }
+    #front-page #service .container .card h5, #front-page #service .container .card .h5 {
+      letter-spacing: 0.2em; }
+    #front-page #service .container .card-text {
+      font-size: 14px;
+      line-height: 1.8; }
+    #front-page #service .container .card-btn a {
+      letter-spacing: 0.2em;
+      color: #104088;
+      border-color: #b4c7dd; }
+  #front-page #about .container .card {
+    border: none; }
+  #front-page #doctor .container .card {
+    background-color: transparent;
+    border: none; }
+  #front-page #news .container {
+    max-width: 1000px; }
+    #front-page #news .container .news-list {
+      border-top: 1px solid #104088;
+      width: 800px; }
+      #front-page #news .container .news-list article {
+        cursor: pointer;
+        border-bottom: 1px solid #104088; }
+        #front-page #news .container .news-list article .news-title {
+          font-size: 16px;
+          width: 100%; }
+        #front-page #news .container .news-list article .news-detail {
+          font-size: 14px; }
+  #front-page #gmap .container {
+    max-width: 1000px; }
 
 #site-title a {
   color: #3e3e3e; }
@@ -7898,7 +7934,7 @@ a:hover {
   color: #3e3e3e; }
 
 #header-nav #access-btn {
-  background-color: #295282;
+  background-color: #8d9cad;
   border: none; }
 
 @media (min-width: 768px) {

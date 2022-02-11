@@ -1,0 +1,69 @@
+#front-page {
+  color: #104088;
+  .page-link-btn {
+    a {
+      background-color: #8d9cad;
+    }
+  }
+  #service {
+    .container {
+      max-width: 1000px;
+      .card {
+        h5 {
+          letter-spacing: 0.2em;
+        }
+      }
+      .card-text {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+      .card-btn {
+        a {
+          letter-spacing: 0.2em;
+          color: #104088;
+          border-color: #b4c7dd;
+        }
+      }
+    }
+  }
+  #about {
+    .container {
+      .card {
+        border: none;
+      }
+    }
+  }
+  #doctor {
+    .container {
+      .card {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+  #news {
+    .container {
+      max-width: 1000px;
+      .news-list {
+        border-top: 1px solid #104088;
+        width: 800px;
+        article {
+          cursor: pointer;
+          border-bottom: 1px solid #104088;
+          .news-title {
+            font-size: 16px;
+            width: 100%;
+          }
+          .news-detail {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  #gmap {
+    .container {
+      max-width: 1000px;
+    }
+  }
+}

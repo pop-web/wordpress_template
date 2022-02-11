@@ -11,7 +11,7 @@
 
 ?>
 
-<div id="footer-content" class="container d-flex justify-content-between">
+<div id="footer-content" class="container d-flex justify-content-between mt-5">
   <div class="schedule">
     <table class="table-schedule">
       <tbody>
@@ -50,7 +50,7 @@
     <p>※土曜日の午後診療は〜17:30となります。</p>
   </div>
   <div class="shop-info text-end d-flex flex-column justify-content-between">
-    <div class="fs-2">
+    <div class="fs-3">
       <?php bloginfo('name'); ?>
     </div>
     <div class="address">
@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<nav class="navbar navbar-expand-md px-0 py-4">
+<nav id="footer-nav-wrap" class="navbar navbar-expand-md px-0 py-4">
   <div class="container">
     <div class="collapse navbar-collapse">
       <?php
