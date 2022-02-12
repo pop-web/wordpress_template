@@ -11,7 +11,7 @@
 
 ?>
 
-<div id="footer-content" class="container d-flex justify-content-between mt-5">
+<div id="footer-content" class="container d-md-flex justify-content-between mt-5">
   <div class="schedule">
     <table class="table-schedule">
       <tbody>
@@ -23,7 +23,8 @@
           <th>木</th>
           <th>金</th>
           <th>土</th>
-          <th>日・祝</th>
+          <th>日</th>
+          <th>祝</th>
         </tr>
         <tr>
           <td>9:30-13:00</td>
@@ -33,6 +34,7 @@
           <td>○</td>
           <td>○</td>
           <td>○</td>
+          <td>ー</td>
           <td>ー</td>
         </tr>
         <tr>
@@ -44,13 +46,14 @@
           <td>○</td>
           <td>△</td>
           <td>ー</td>
+          <td>ー</td>
         </tr>
       </tbody>
     </table>
     <p>※土曜日の午後診療は〜17:30となります。</p>
   </div>
-  <div class="shop-info text-end d-flex flex-column justify-content-between">
-    <div class="fs-3">
+  <div class="shop-info text-center text-md-end d-flex flex-column justify-content-between mt-5 mt-md-0">
+    <div class="fs-md-3 fs-4">
       <?php bloginfo('name'); ?>
     </div>
     <div class="address">
@@ -76,7 +79,7 @@
       );
       ?>
     </div>
-    <ul id="sns-nav" class="navbar-nav">
+    <ul id="sns-nav" class="navbar-nav mx-auto flex-md-row flex-row">
       <li>
         <a href="">
           <i class="bi bi-line"></i>

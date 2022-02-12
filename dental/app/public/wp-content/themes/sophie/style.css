@@ -7839,9 +7839,15 @@ a:hover {
       font-size: 16px; }
       #footer-content .schedule .table-schedule tr {
         border-bottom: 1px solid #104088; }
+        @media (min-width: 768px) {
+          #footer-content .schedule .table-schedule tr th,
+          #footer-content .schedule .table-schedule tr td {
+            padding: 0.7rem 1.1rem;
+            letter-spacing: 0.1em; } }
         #footer-content .schedule .table-schedule tr th,
         #footer-content .schedule .table-schedule tr td {
-          padding: 0.7rem 1.1rem;
+          font-size: 14px;
+          padding: 0.3rem 0.4rem;
           letter-spacing: 0.1em; }
         #footer-content .schedule .table-schedule tr th {
           padding-top: 0; }
@@ -7850,8 +7856,11 @@ a:hover {
         margin: 0.8rem 0 0 0; }
   #footer-content .shop-info {
     color: #104088; }
+    @media (min-width: 768px) {
+      #footer-content .shop-info .address {
+        font-size: 18px; } }
     #footer-content .shop-info .address {
-      font-size: 18px;
+      font-size: 14px;
       letter-spacing: 0.1em; }
 
 #footer-nav-wrap .container {
@@ -7902,11 +7911,16 @@ a:hover {
   #front-page #doctor .container .card {
     background-color: transparent;
     border: none; }
+  @media (min-width: 768px) {
+    #front-page #news .container {
+      max-width: 100%; }
+      #front-page #news .container .news-list {
+        width: 800px; } }
   #front-page #news .container {
     max-width: 1000px; }
     #front-page #news .container .news-list {
       border-top: 1px solid #104088;
-      width: 800px; }
+      width: 100%; }
       #front-page #news .container .news-list article {
         cursor: pointer;
         border-bottom: 1px solid #104088; }
@@ -7914,7 +7928,10 @@ a:hover {
           font-size: 16px;
           width: 100%; }
         #front-page #news .container .news-list article .news-detail {
-          font-size: 14px; }
+          font-size: 14px;
+          display: none; }
+          #front-page #news .container .news-list article .news-detail.is-active {
+            display: block; }
   #front-page #gmap .container {
     max-width: 1000px; }
 

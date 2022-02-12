@@ -9,9 +9,17 @@
       font-size: 16px;
       tr {
         border-bottom: 1px solid #104088;
+        @media (min-width: 768px) {
+          th,
+          td {
+            padding: 0.7rem 1.1rem;
+            letter-spacing: 0.1em;
+          }
+        }
         th,
         td {
-          padding: 0.7rem 1.1rem;
+          font-size: 14px;
+          padding: 0.3rem 0.4rem;
           letter-spacing: 0.1em;
         }
         th {
@@ -26,8 +34,13 @@
   }
   .shop-info {
     color: #104088;
+    @media (min-width: 768px) {
+      .address {
+        font-size: 18px;
+      }
+    }
     .address {
-      font-size: 18px;
+      font-size: 14px;
       letter-spacing: 0.1em;
     }
   }

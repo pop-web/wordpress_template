@@ -25,13 +25,13 @@
 <body class="d-flex flex-column h-100 wf-kosugimaru">
   <?php wp_body_open(); ?>
   <header class="bg-white">
-    <?php if (get_header_image()) : ?>
+    <!-- <?php if (get_header_image()) : ?>
       <div class="text-center">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
           <img src="<?php header_image(); ?>" width="<?php echo absint(get_custom_header()->width); ?>" height="<?php echo absint(get_custom_header()->height); ?>" alt="">
         </a>
       </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
     <nav class="navbar navbar-expand-md px-0 py-4">
       <div class="container align-items-end">
         <div>
@@ -59,7 +59,7 @@
           </div>
         </div>
         <div id="header-nav">
-          <nav class="navbar-nav align-items-center justify-content-end mb-2">
+          <nav class="navbar-nav align-items-center justify-content-end mb-2 d-none d-md-block">
             <?php if (get_theme_mod('shop_tel')) : ?>
               <div id="tel-phone">
                 <i class="bi bi-telephone-fill"></i>
@@ -79,7 +79,7 @@
           <button class="navbar-toggler px-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse">
+          <div class="collapse navbar-collapse" id="navbarCollapse">
             <?php
             wp_nav_menu(
               array(

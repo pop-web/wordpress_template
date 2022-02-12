@@ -74,7 +74,7 @@ get_header();
       </div>
     </div>
     <div class="page-link-btn mt-5 text-center">
-      <a href="/service" class="btn text-white py-3 w-25">
+      <a href="/service" class="btn text-white py-3 w-50 w-md-25">
         診療内容へ
       </a>
     </div>
@@ -135,7 +135,7 @@ get_header();
       </div>
     </div>
     <div class="page-link-btn mt-5 text-center">
-      <a href="/service" class="btn text-white py-3 w-25">
+      <a href="/service" class="btn text-white py-3 w-50 w-md-25">
         当院についてへ
       </a>
     </div>
@@ -176,13 +176,27 @@ get_header();
   </section>
 
   <div id="news" class="mt-5">
-    <div class="container d-flex justify-content-between">
+    <div class="container d-md-flex justify-content-between">
       <h2>お知らせ</h2>
       <div class="news-list">
-        <article class="p-4 d-flex">
+        <article class="news-article p-4 d-flex">
           <time>2020.4.15</time>
-          <div class="ms-5">
-            <div class="w-100 d-flex align-items-center justify-content-between">
+          <div class="ms-5 w-100">
+            <div class="d-flex align-items-center justify-content-between">
+              <h2 class="news-title m-0">
+                新型コロナウイルス感染拡大防止について（長文）
+              </h2>
+              <i class="bi bi-arrow-down-circle"></i>
+            </div>
+            <div class="news-detail mt-3">
+              みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+            </div>
+          </div>
+        </article>
+        <article class="news-article p-4 d-flex">
+          <time>2020.4.15</time>
+          <div class="ms-5 w-100">
+            <div class="d-flex align-items-center justify-content-between">
               <h2 class="news-title m-0">
                 新型コロナウイルス感染拡大防止について（長文）
               </h2>
@@ -202,7 +216,6 @@ get_header();
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.7548718177336!2d139.69986681500893!3d35.68303733748081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cc6088e6041%3A0x3dd39ee1809084f7!2z5Luj44CF5pyo6aeF!5e0!3m2!1sja!2sjp!4v1644331607413!5m2!1sja!2sjp" height="500" style="border:0;" allowfullscreen="" loading="lazy" class="w-100"></iframe>
     </div>
   </section>
-
 </main>
 
 <?php
