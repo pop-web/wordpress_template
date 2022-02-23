@@ -59,7 +59,7 @@
           </div>
         </div>
         <div id="header-nav">
-          <nav class="navbar-nav align-items-center justify-content-end mb-2 d-none d-md-block">
+          <nav class="navbar-nav align-items-center justify-content-end mb-2 d-none d-md-flex">
             <?php if (get_theme_mod('shop_tel')) : ?>
               <div id="tel-phone">
                 <i class="bi bi-telephone-fill"></i>
@@ -79,7 +79,7 @@
           <button class="navbar-toggler px-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="collapse navbar-collapse p-3 p-md-0" id="navbarCollapse">
             <?php
             wp_nav_menu(
               array(
