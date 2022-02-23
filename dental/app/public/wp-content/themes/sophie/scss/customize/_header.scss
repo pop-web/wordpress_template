@@ -6,6 +6,33 @@
 
 // スマホハンバーガーメニュー
 #header-nav {
+  #navbarCollapse {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    opacity: 0.9;
+    background-color: #fff;
+    #header-nav {
+      margin-top: 1.5em;
+      li {
+        padding: 0.5em 1.5em;
+        border-top: 1px solid #b4c7dd;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    #navbarCollapse {
+      position: relative;
+      width: auto;
+      #header-nav {
+        margin-top: 0;
+        li {
+          padding: 0;
+          border-top: none;
+        }
+      }
+    }
+  }
   .navbar-toggler {
     background-color: #f0f0f1;
     &:focus {
