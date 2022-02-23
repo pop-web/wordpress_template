@@ -7946,11 +7946,11 @@ a:hover {
   right: 0;
   opacity: 0.9;
   background-color: #fff; }
-  #header-nav #navbarCollapse #header-nav {
-    margin-top: 1.5em; }
-    #header-nav #navbarCollapse #header-nav li {
-      padding: 0.5em 1.5em;
-      border-top: 1px solid #b4c7dd; }
+  #header-nav #navbarCollapse #header-nav li {
+    border-top: 1px solid #b4c7dd; }
+    #header-nav #navbarCollapse #header-nav li a {
+      display: block;
+      padding: 0.5em; }
 
 @media (min-width: 768px) {
   #header-nav #navbarCollapse {

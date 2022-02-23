@@ -13,10 +13,12 @@
     opacity: 0.9;
     background-color: #fff;
     #header-nav {
-      margin-top: 1.5em;
       li {
-        padding: 0.5em 1.5em;
         border-top: 1px solid #b4c7dd;
+        a {
+          display: block;
+          padding: 0.5em;
+        }
       }
     }
   }
