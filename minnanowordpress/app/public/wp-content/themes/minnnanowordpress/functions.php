@@ -39,14 +39,16 @@ function my_remove_widgets_block_editor()
 add_action('after_setup_theme', 'my_remove_widgets_block_editor');
 
 // 冒頭抜粋文の文字数変更
-function custom_excerpt_length( $length ) {
-  return 100;	//表示したい文字数
+function custom_excerpt_length($length)
+{
+  return 100;  //表示したい文字数
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length');
+add_filter('excerpt_length', 'custom_excerpt_length');
 
 // 抜粋文の文末[…]の変更
-function new_excerpt_more($more) {
-	return '…'; //変更後の内容
+function new_excerpt_more($more)
+{
+  return '…'; //変更後の内容
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -170,12 +172,12 @@ function insert_custom_fields()
 ?>
   <p>
     <label for="image" style="display: block;">メイン画像</label>
-    <div id="media">
-      <img src="<?php echo $image; ?>" style="max-width:500px">
-    </div>
-    <input style="display:none" name="image" type="text" value="<?php echo $image ?>" />
-    <input style="width:80px" type="button" name="media" value="画像選択" />
-    <input style="width:80px" type="button" name="media-clear" value="削除" />
+  <div id="media">
+    <img src="<?php echo $image; ?>" style="max-width:500px">
+  </div>
+  <input style="display:none" name="image" type="text" value="<?php echo $image ?>" />
+  <input style="width:80px" type="button" name="media" value="画像選択" />
+  <input style="width:80px" type="button" name="media-clear" value="削除" />
   </p>
   <p>
     <label for="price" style="display: block;">価格</label>
