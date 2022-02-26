@@ -143,7 +143,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 function theme_style()
 {
   wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), VERSION);
-  wp_enqueue_script('theme-script', get_theme_file_uri('js/dist/bundle.js'),  array(), VERSION);
+  wp_enqueue_script('theme-script', get_theme_file_uri('js/dist/bundle.js'),  array('jquery', 'jquery-ui-accordion'), VERSION);
   // bootstrap-icons.css
   wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css", array(), VERSION);
 }
@@ -187,6 +187,12 @@ if (defined('JETPACK__VERSION')) {
  * Format Phone Number
  */
 require get_template_directory() . '/inc/format-phone-number.php';
+
+/**
+ * 記事並び替え
+ */
+require get_template_directory() . '/inc/post-order.php';
+
 
 /**
  * Post Type: テーマ

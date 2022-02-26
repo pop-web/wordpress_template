@@ -174,37 +174,45 @@ get_header();
       </div>
     </div>
   </section>
-
   <div id="news" class="mt-5">
     <div class="container d-md-flex justify-content-between">
       <h2>お知らせ</h2>
       <div class="news-list">
-        <article class="news-article p-4 d-flex">
-          <time>2020.4.15</time>
-          <div class="ms-5 w-100">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="news-title m-0">
-                新型コロナウイルス感染拡大防止について（長文）
-              </h2>
-              <i class="bi bi-arrow-down-circle"></i>
-            </div>
-            <div class="news-detail mt-3">
-              みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+        <article class="news-article">
+          <div class="news-title d-md-flex p-4">
+            <time>2020.04.15</time>
+            <div class="ms-md-5 ms-md-3 w-100">
+              <div class="d-flex align-items-center justify-content-between">
+                <h2 class="m-0">
+                  新型コロナウイルス感染拡大防止について（長文）
+                </h2>
+                <i class="bi bi-arrow-down-circle ms-md-0 ms-2"></i>
+              </div>
             </div>
           </div>
+          <div class="news-detail pb-4">
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
+          </div>
         </article>
-        <article class="news-article p-4 d-flex">
-          <time>2020.4.15</time>
-          <div class="ms-5 w-100">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="news-title m-0">
-                新型コロナウイルス感染拡大防止について（長文）
-              </h2>
-              <i class="bi bi-arrow-down-circle"></i>
+        <article class="news-article">
+          <div class="news-title d-md-flex p-4">
+            <time>2020.04.15</time>
+            <div class="ms-md-5 ms-md-3 w-100">
+              <div class="d-flex align-items-center justify-content-between">
+                <h2 class="m-0">
+                  新型コロナウイルス感染拡大防止について（長文）
+                </h2>
+                <i class="bi bi-arrow-down-circle ms-md-0 ms-2"></i>
+              </div>
             </div>
-            <div class="news-detail mt-3">
-              みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
-            </div>
+          </div>
+          <div class="news-detail pb-4">
+            みなさま、大変な状況が続いており、健常な方々もストレスを強いられる日常を過ごされていることと思います。
           </div>
         </article>
       </div>
