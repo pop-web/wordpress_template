@@ -14,6 +14,7 @@
 # ignore specific themes
 **/app/public/wp-content/themes/twenty*/
 **/app/public/wp-content/themes/_*/
+**/app/public/wp-content/themes/cure_tcd082/
 
 # ignore node dependency directories
 **/app/public/wp-content/themes/**/node_modules/
