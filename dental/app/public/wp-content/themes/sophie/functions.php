@@ -204,12 +204,12 @@ function feature_post_type()
     // 'revisions', //リビジョンを保存
   );
   register_post_type(
-    'feature', // 投稿タイプ名の定義
+    'about', // 投稿タイプ名の定義
     [
       'labels' => [
-        'name' => '特徴', // 管理画面上で表示する投稿タイプ名
-        'menu_name' => '特徴', //メニュー名のテキスト
-        'all_items' => '特徴一覧' //  すべてのメニュー名
+        'name' => '当院ついて', // 管理画面上で表示する投稿タイプ名
+        'menu_name' => '当院ついて', //メニュー名のテキスト
+        'all_items' => '当院ついて一覧' //  すべてのメニュー名
       ],
       'public'        => true,  // カスタム投稿タイプの表示(trueにする)
       'has_archive'   => true, // カスタム投稿一覧(true:表示/false:非表示)

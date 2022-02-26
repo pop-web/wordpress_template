@@ -1,0 +1,15 @@
+#archive-about {
+  color: #104088;
+  letter-spacing: 0.1em;
+  .header {
+    width: 216px;
+    margin: 80px auto 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+}
