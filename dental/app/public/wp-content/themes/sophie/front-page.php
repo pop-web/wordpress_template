@@ -79,67 +79,45 @@ get_header();
       </a>
     </div>
   </section>
-  <section id="about" class="mt-5">
-    <div class="container">
-      <div class="card mb-5">
-        <div class="row">
-          <div class="col-md-7">
-            <img src="http://localhost:10013/wp-content/uploads/2022/02/3987078_s.jpeg" alt="" class="w-100">
-          </div>
-          <div class="col-md-5">
-            <div class="card-body">
-              <h2 class="card-title fs-1">
-                歯を診る。<br />その歯の未来も見る。
-              </h2>
-              <p class="card-text mt-5">
-                きふね歯科では、
-                全ての治療は予防治療に繋がると考えています。
-                <br />
-                <br />
-                口の中全体をみわたして歯を治し、
-                口内環境を今後も健全に保てるようにサポートします。
-                <br />
-                <br />
-                一人ひとりの方と、そして、一本一本の大事な歯とも、
-                末長くお付き合いをさせていただきたいと思っています。
-              </p>
+  <?php
+  $args = array('post_type' => 'about', 'posts_per_page' => -1);
+  $post_list_query = new wp_query($args);
+  if ($post_list_query->have_posts()) :
+  ?>
+    <section id="about" class="mt-5">
+      <div class="container">
+        <?php $i = 1; while ($post_list_query->have_posts()) : $post_list_query->the_post();  ?>
+          <div class="card mb-5">
+            <div
+              class="row
+              <?php if ($i % 2 === 0) { echo ' flex-row-reverse'; }; ?>"
+            >
+              <div class="col-md-7">
+                <?php the_post_thumbnail('full',array('class' => 'w-100')); ?>
+              </div>
+              <div class="col-md-5">
+                <div class="card-body">
+                  <h2 class="card-title fs-1">
+                    <?php the_title(); ?>
+                  </h2>
+
+                  <div class="card-text mt-5">
+                    <?php the_content() ?>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        <?php $i++; endwhile; ?>
       </div>
-      <div class="card mb-5">
-        <div class="row flex-row-reverse">
-          <div class="col-md-7">
-            <img src="http://localhost:10013/wp-content/uploads/2022/02/3987078_s.jpeg" alt="" class="w-100">
-          </div>
-          <div class="col-md-5">
-            <div class="card-body">
-              <h2 class="card-title fs-1">
-                歯を診る。<br />その歯の未来も見る。
-              </h2>
-              <p class="card-text mt-5">
-                きふね歯科では、
-                全ての治療は予防治療に繋がると考えています。
-                <br />
-                <br />
-                口の中全体をみわたして歯を治し、
-                口内環境を今後も健全に保てるようにサポートします。
-                <br />
-                <br />
-                一人ひとりの方と、そして、一本一本の大事な歯とも、
-                末長くお付き合いをさせていただきたいと思っています。
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="page-link-btn mt-5 text-center">
+        <a href="/about" class="btn text-white py-3 w-50 w-md-25">
+          当院についてへ
+        </a>
       </div>
-    </div>
-    <div class="page-link-btn mt-5 text-center">
-      <a href="/service" class="btn text-white py-3 w-50 w-md-25">
-        当院についてへ
-      </a>
-    </div>
-  </section>
+    </section>
+  <?php endif;
+  wp_reset_query(); ?>
   <section id="doctor" class="mt-5 py-5 bg-sub">
     <div class="container">
       <div class="card mb-5">

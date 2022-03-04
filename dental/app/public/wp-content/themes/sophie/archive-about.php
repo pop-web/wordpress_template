@@ -7,31 +7,26 @@ get_header();
     <h1 class="title">当院ついて</h1>
     <img src="<?php bloginfo('template_directory'); ?>/images/kakko_right.svg">
   </div>
-  <section class="container">
-    <?php
-    $args = array(
-      'post_type' => 'about',
-      'posts_per_page' => -1,
-    );
-    $news_query = new WP_Query($args);
-    if ($news_query->have_posts()) :
-      while ($news_query->have_posts()) :
-        $news_query->the_post();
-    ?>
+  <?php if (have_posts()) : ?>
+    <section class="container">
+      <?php
+      while (have_posts()) :
+        the_post();
+      ?>
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
-            <h2><?php the_title(); ?></h2>
-            <?php the_content() ?>
+            <?php the_post_thumbnail('full',array('class' => 'w-100')); ?>
           </div>
           <div class="col">
-            <?php the_post_thumbnail(); ?>
+            <h2 class="my-4"><?php the_title(); ?></h2>
+            <?php the_content() ?>
           </div>
         </div>
-    <?php
+      <?php
       endwhile;
-    endif;
-    wp_reset_postdata(); ?>
-  </section>
+      ?>
+    </section>
+  <?php endif; ?>
 </main>
 <?php
 get_footer();

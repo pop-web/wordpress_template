@@ -34,7 +34,7 @@
     <?php endif; ?> -->
     <nav class="navbar navbar-expand-md px-0 py-4">
       <div class="container align-items-end">
-        <div>
+        <div class="pb-md-2">
           <?php
           $minnanowordpress_description = get_bloginfo('description', 'display');
           if ($minnanowordpress_description || is_customize_preview()) :
