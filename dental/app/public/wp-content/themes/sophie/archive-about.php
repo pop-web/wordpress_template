@@ -1,8 +1,8 @@
 <?php
 get_header();
 ?>
-<main id="archive-about" class="container-fuild">
-  <div class="header">
+<main id="archive-about" class="container-fuild main-section">
+  <div class="page-title-header">
     <img src="<?php bloginfo('template_directory'); ?>/images/kakko_left.svg">
     <h1 class="title">当院について</h1>
     <img src="<?php bloginfo('template_directory'); ?>/images/kakko_right.svg">

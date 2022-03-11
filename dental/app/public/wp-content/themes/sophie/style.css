@@ -7811,32 +7811,15 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
-#archive-about {
-  color: #104088;
-  letter-spacing: 0.1em; }
-  #archive-about .header {
-    width: 50%;
-    margin: 20px auto 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    #archive-about .header .title {
-      font-size: 16px;
-      margin: 0; }
-    @media (min-width: 768px) {
-      #archive-about .header .title {
-        font-size: 20px; } }
-  @media (min-width: 768px) {
-    #archive-about .header {
-      width: 216px;
-      margin: 80px auto 100px; } }
-
 a:hover {
   opacity: 0.7;
   transition: opacity 0.5s ease; }
 
 .bg-sub {
   background-color: #f0f3f7; }
+
+.sub-color {
+  color: #B4C7DD; }
 
 .wf-sawarabimincho {
   font-family: 'Sawarabi Mincho'; }
@@ -8055,3 +8038,25 @@ a:hover {
       color: #fff;
       background-color: #212529;
       border-radius: 0.25rem; }
+
+.main-section {
+  color: #295282;
+  letter-spacing: 0.1em; }
+
+.page-title-header {
+  width: 50%;
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .page-title-header .title {
+    font-size: 16px;
+    margin: 0; }
+  @media (min-width: 768px) {
+    .page-title-header .title {
+      font-size: 20px; } }
+
+@media (min-width: 768px) {
+  .page-title-header {
+    width: 216px;
+    margin: 80px auto 100px; } }

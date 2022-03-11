@@ -1,0 +1,27 @@
+.main-section{
+  color: #295282;
+  letter-spacing: 0.1em;
+}
+
+.page-title-header {
+  width: 50%;
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .title {
+    font-size: 16px;
+    margin: 0;
+  }
+  @media (min-width: 768px) {
+    .title {
+      font-size: 20px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .page-title-header {
+    width: 216px;
+    margin: 80px auto 100px;
+  }
+}
