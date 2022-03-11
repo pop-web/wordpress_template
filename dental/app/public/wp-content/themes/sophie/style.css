@@ -7830,12 +7830,6 @@ textarea.form-control-lg {
     #archive-about .header {
       width: 216px;
       margin: 80px auto 100px; } }
-  #archive-about .container .row {
-    margin-bottom: 5rem; }
-    #archive-about .container .row:nth-child(even) {
-      flex-direction: row-reverse; }
-    #archive-about .container .row:last-child {
-      margin-bottom: 0; }
 
 a:hover {
   opacity: 0.7;

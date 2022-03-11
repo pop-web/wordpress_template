@@ -23,15 +23,4 @@
       margin: 80px auto 100px;
     }
   }
-  .container {
-    .row {
-      margin-bottom: 5rem;
-      &:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 }
