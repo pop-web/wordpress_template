@@ -7811,6 +7811,33 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+#page-access .container {
+  max-width: 1000px; }
+
+#page-access .schedule {
+  color: #104088; }
+  #page-access .schedule .table-schedule {
+    width: 100%;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 16px; }
+    #page-access .schedule .table-schedule tr {
+      border-bottom: 1px solid #104088; }
+      #page-access .schedule .table-schedule tr th,
+      #page-access .schedule .table-schedule tr td {
+        font-size: 14px;
+        padding: 0.3rem 0.4rem;
+        letter-spacing: 0.1em; }
+      @media (min-width: 768px) {
+        #page-access .schedule .table-schedule tr th,
+        #page-access .schedule .table-schedule tr td {
+          padding: 0.5rem 0.6rem; } }
+      #page-access .schedule .table-schedule tr th {
+        padding-top: 0; }
+    #page-access .schedule .table-schedule + p {
+      font-size: 14px;
+      margin: 0.8rem 0 0 0; }
+
 a:hover {
   opacity: 0.7;
   transition: opacity 0.5s ease; }
@@ -7832,7 +7859,8 @@ a:hover {
   font-weight: 500; }
 
 #footer-content {
-  max-width: 1000px; }
+  max-width: 1000px;
+  margin-top: 6rem; }
   #footer-content .schedule {
     color: #104088; }
     #footer-content .schedule .table-schedule {
@@ -7909,9 +7937,6 @@ a:hover {
       color: #104088;
       border-color: #b4c7dd; }
   #front-page #about .container .card {
-    border: none; }
-  #front-page #doctor .container .card {
-    background-color: transparent;
     border: none; }
   #front-page #news .container {
     max-width: 100%; }

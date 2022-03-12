@@ -1,0 +1,36 @@
+#page-access{
+  .container{
+    max-width: 1000px;
+  }
+  .schedule {
+    color: #104088;
+    .table-schedule {
+      width: 100%;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 16px;
+      tr {
+        border-bottom: 1px solid #104088;
+        th,
+        td {
+          font-size: 14px;
+          padding: 0.3rem 0.4rem;
+          letter-spacing: 0.1em;
+        }
+        @media (min-width: 768px) {
+          th,
+          td {
+            padding: 0.5rem 0.6rem;
+          }
+        }
+        th {
+          padding-top: 0;
+        }
+      }
+      & + p {
+        font-size: 14px;
+        margin: 0.8rem 0 0 0;
+      }
+    }
+  }
+}

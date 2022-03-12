@@ -11,7 +11,7 @@
 
 ?>
 
-<div id="footer-content" class="container d-md-flex justify-content-between mt-5">
+<div id="footer-content" class="container d-md-flex justify-content-between">
   <div class="schedule">
     <table class="table-schedule">
       <tbody>

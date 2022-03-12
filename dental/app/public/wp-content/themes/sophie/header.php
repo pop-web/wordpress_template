@@ -71,7 +71,7 @@
                 </a>
               </div>
             <?php endif; ?>
-            <a href="" id="access-btn" class="btn btn-primary rounded-pill px-4 py-1 ms-4">
+            <a href="/access" id="access-btn" class="btn btn-primary rounded-pill px-4 py-1 ms-4">
               <i class="bi bi-geo-alt"></i>
               アクセス
             </a>

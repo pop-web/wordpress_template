@@ -118,9 +118,9 @@ get_header();
     </section>
   <?php endif;
   wp_reset_query(); ?>
-  <section id="doctor" class="mt-5 py-5 bg-sub">
+  <section class="mt-5 py-5 bg-sub">
     <div class="container">
-      <div class="card mb-5">
+      <div class="card mb-5 bg-transparent border-0">
         <div class="row flex-row-reverse">
           <div class="col-md-6">
             <img src="http://localhost:10013/wp-content/uploads/2022/02/4275887_s-e1644556918160.jpeg" alt="" class="w-100">
