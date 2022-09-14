@@ -4,5 +4,6 @@ jQuery(document).ready(function ($) {
     collapsible: true,
     active: false,
     animate: 200,
+    heightStyle: "content",
   });
 });
