@@ -86,14 +86,15 @@ get_header();
   ?>
     <section id="about" class="mt-5">
       <div class="container">
-        <?php $i = 1; while ($post_list_query->have_posts()) : $post_list_query->the_post();  ?>
+        <?php $i = 1;
+        while ($post_list_query->have_posts()) : $post_list_query->the_post();  ?>
           <div class="card mb-5">
-            <div
-              class="row
-              <?php if ($i % 2 === 0) { echo ' flex-row-reverse'; }; ?>"
-            >
+            <div class="row
+              <?php if ($i % 2 === 0) {
+                echo ' flex-row-reverse';
+              }; ?>">
               <div class="col-md-7">
-                <?php the_post_thumbnail('full',array('class' => 'w-100')); ?>
+                <?php the_post_thumbnail('full', array('class' => 'w-100')); ?>
               </div>
               <div class="col-md-5">
                 <div class="card-body">
@@ -108,7 +109,8 @@ get_header();
               </div>
             </div>
           </div>
-        <?php $i++; endwhile; ?>
+        <?php $i++;
+        endwhile; ?>
       </div>
       <div class="page-link-btn mt-5 text-center">
         <a href="/about" class="btn text-white py-3 w-50 w-md-25">
@@ -156,8 +158,8 @@ get_header();
     <div class="container d-md-flex justify-content-between">
       <h2>お知らせ</h2>
       <div class="news-list">
-        <article class="news-article">
-          <div class="news-title d-md-flex p-4">
+        <article class="news-article js-accordion-article">
+          <div class="news-title d-md-flex p-4 js-accordion-ttl">
             <time>2020.04.15</time>
             <div class="ms-md-5 ms-md-3 w-100">
               <div class="d-flex align-items-center justify-content-between">

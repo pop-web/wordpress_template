@@ -47,9 +47,13 @@
     stroke-width='3' stroke-linecap='round'  stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
   #tel-phone {
-    a,
-    .bi-telephone-fill::before {
+    a {
       color: #3e3e3e;
+    }
+    .bi-telephone-fill {
+      &::before{
+        transform: rotate(15deg);
+      }
     }
   }
   #access-btn {
@@ -59,7 +63,7 @@
   @media (min-width: 768px) {
     li {
       line-height: 1.5;
-      margin-left: 1.5rem;
+      margin-left: 1rem;
       font-size: 15px;
       &:first-child {
         margin-left: 0;

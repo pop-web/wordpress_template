@@ -5,7 +5,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sawarabi+Mincho&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sawarabi+Mincho+Comfortaa&display=swap';
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -7848,6 +7848,9 @@ a:hover {
 .sub-color {
   color: #B4C7DD; }
 
+.wf-comfortaa {
+  font-family: 'Sawarabi Mincho'; }
+
 .wf-sawarabimincho {
   font-family: 'Sawarabi Mincho'; }
 
@@ -7997,9 +8000,11 @@ a:hover {
 #header-nav .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'\a     xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(51, 51, 51, 1)'\a     stroke-width='3' stroke-linecap='round'  stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
 
-#header-nav #tel-phone a,
-#header-nav #tel-phone .bi-telephone-fill::before {
+#header-nav #tel-phone a {
   color: #3e3e3e; }
+
+#header-nav #tel-phone .bi-telephone-fill::before {
+  transform: rotate(15deg); }
 
 #header-nav #access-btn {
   background-color: #8d9cad;
@@ -8008,7 +8013,7 @@ a:hover {
 @media (min-width: 768px) {
   #header-nav li {
     line-height: 1.5;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     font-size: 15px; }
     #header-nav li:first-child {
       margin-left: 0; } }
@@ -8028,6 +8033,14 @@ a:hover {
 
 #comments {
   margin-top: 2em; }
+
+#archive-qa .container {
+  max-width: 1000px; }
+
+#archive-qa .qa-article {
+  cursor: pointer; }
+  #archive-qa .qa-article .qa-title {
+    border-bottom: 1px solid #104088; }
 
 #widget-area section.widget {
   margin-bottom: 2em; }

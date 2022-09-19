@@ -1,0 +1,11 @@
+#archive-qa{
+  .container{
+    max-width: 1000px;
+  }
+  .qa-article {
+    cursor: pointer;
+    .qa-title {
+      border-bottom: 1px solid #104088;
+    }
+  }
+}

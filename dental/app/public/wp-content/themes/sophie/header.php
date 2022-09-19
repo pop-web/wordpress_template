@@ -49,26 +49,21 @@
             if (is_front_page() && is_home()) :
             ?>
               <a class="navbar-brand m-0 p-0" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                <h1 class="fs-md-3 fs-3 m-0"><?php bloginfo('name'); ?></h1>
+                <h1 class="fs-md-3 fs-4 m-0"><?php bloginfo('name'); ?></h1>
               </a>
             <?php else : ?>
               <a class="navbar-brand m-0 p-0" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                <div class="fs-md-3 fs-3 m-0"><?php bloginfo('name'); ?></div>
+                <div class="fs-md-3 fs-4 m-0"><?php bloginfo('name'); ?></div>
               </a>
             <?php endif; ?>
           </div>
         </div>
         <div id="header-nav">
-          <nav class="navbar-nav align-items-center justify-content-end mb-2 d-none d-md-flex">
+          <nav class="navbar-nav align-items-center justify-content-end  d-none d-md-flex">
             <?php if (get_theme_mod('shop_tel')) : ?>
               <div id="tel-phone">
-                <i class="bi bi-telephone-fill"></i>
-                <a href="tel:<?php echo get_theme_mod("shop_tel") ?>" class="fs-3 text-decoration-none">
-                  <?php
-                  $tel = get_theme_mod('shop_tel');
-                  echo format_phone_number($tel)
-                  ?>
-                </a>
+                <a href="tel:<?php echo get_theme_mod("shop_tel") ?>" class="fs-3 text-decoration-none d-flex align-items-center">
+                  <i class="bi bi-telephone-fill fs-5"></i><?php $tel = get_theme_mod('shop_tel'); ?><span class="ms-1"><?php echo format_phone_number($tel) ?></span></a>
               </div>
             <?php endif; ?>
             <a href="/access" id="access-btn" class="btn btn-primary rounded-pill px-4 py-1 ms-4">

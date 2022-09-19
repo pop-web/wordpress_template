@@ -1,9 +1,8 @@
 jQuery(document).ready(function ($) {
-  $("#news .news-article").accordion({
-    header: ".news-title",
+  $(".js-accordion-article").accordion({
+    header: ".js-accordion-ttl",
     collapsible: true,
     active: false,
     animate: 200,
-    heightStyle: "content",
   });
 });
