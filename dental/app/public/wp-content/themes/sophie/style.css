@@ -8034,6 +8034,18 @@ a:hover {
 #comments {
   margin-top: 2em; }
 
+#archive-news .container {
+  max-width: 1000px; }
+
+#archive-news .news-article {
+  cursor: pointer; }
+  #archive-news .news-article:first-child {
+    border-top: 1px solid #104088; }
+  #archive-news .news-article .news-title {
+    border-bottom: 1px solid #104088; }
+    #archive-news .news-article .news-title.ui-state-active .bi-arrow-down-circle {
+      transform: rotateX(180deg); }
+
 #archive-qa .container {
   max-width: 1000px; }
 
@@ -8041,6 +8053,8 @@ a:hover {
   cursor: pointer; }
   #archive-qa .qa-article .qa-title {
     border-bottom: 1px solid #104088; }
+    #archive-qa .qa-article .qa-title.ui-state-active .bi-arrow-down-circle {
+      transform: rotateX(180deg); }
 
 #widget-area section.widget {
   margin-bottom: 2em; }

@@ -279,13 +279,43 @@ function qa_post_type()
       ],
       'public'        => true,  // カスタム投稿タイプの表示(trueにする)
       'has_archive'   => true, // カスタム投稿一覧(true:表示/false:非表示)
-      'menu_position' => 8,     // 管理画面上での表示位置
+      'menu_position' => 7,     // 管理画面上での表示位置
       'show_in_rest'  => true,  // true:「Gutenberg」/ false:「ClassicEditor」
       'supports' => $supports
     ]
   );
 }
 add_action('init', 'qa_post_type');
+
+
+function news_post_type()
+{
+  //投稿時に使用できる投稿用のパーツを指定
+  $supports = array(
+    'title', //タイトルフォーム
+    'editor', //エディター(内容の編集)
+    'thumbnail', //アイキャッチ画像
+    //'author', //投稿者
+    //'excerpt', //抜粋
+    // 'revisions', //リビジョンを保存
+  );
+  register_post_type(
+    'news', // 投稿タイプ名の定義
+    [
+      'labels' => [
+        'name' => 'お知らせ', // 管理画面上で表示する投稿タイプ名
+        'menu_name' => 'お知らせ', //メニュー名のテキスト
+        'all_items' => 'お知らせ一覧' //  すべてのメニュー名
+      ],
+      'public'        => true,  // カスタム投稿タイプの表示(trueにする)
+      'has_archive'   => true, // カスタム投稿一覧(true:表示/false:非表示)
+      'menu_position' => 8,     // 管理画面上での表示位置
+      'show_in_rest'  => true,  // true:「Gutenberg」/ false:「ClassicEditor」
+      'supports' => $supports
+    ]
+  );
+}
+add_action('init', 'news_post_type');
 
 // $starter_content = [
 //   'posts' => [

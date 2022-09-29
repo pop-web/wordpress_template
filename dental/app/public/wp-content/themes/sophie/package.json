@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "みんなWordPress",
   "author": "POP",
+  "scripts": {
+    "gulp": "npx gulp"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",

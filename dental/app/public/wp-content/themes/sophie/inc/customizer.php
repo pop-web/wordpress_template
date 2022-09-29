@@ -58,22 +58,56 @@ function customize_register($wp_customize)
     )
   );
 
-  $wp_customize->add_setting('shop_address');
+  $wp_customize->add_setting('shop_zip');
   $wp_customize->add_control(
     new WP_Customize_Control(
       $wp_customize,
       'shop_control_2',
       array(
-        'label'    => '住所',
+        'label'    => '郵便番号',
         'section'  => 'shop_info',
-        'settings' => 'shop_address',
+        'settings' => 'shop_zip',
         'priority' => 2,
         'type'     => 'text',
       )
     )
   );
+
+  $wp_customize->add_setting('shop_address');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'shop_control_3',
+      array(
+        'label'    => '住所',
+        'section'  => 'shop_info',
+        'settings' => 'shop_address',
+        'priority' => 3,
+        'type'     => 'text',
+      )
+    )
+  );
+
+
+  $wp_customize->add_setting('shop_fax');
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'shop_control_4',
+      array(
+        'label'    => 'FAX',
+        'section'  => 'shop_info',
+        'settings' => 'shop_fax',
+        'priority' => 4,
+        'type'     => 'tel',
+      )
+    )
+  );
 }
+
 add_action('customize_register', 'customize_register');
+
+
 
 /**
  * Render the site title for the selective refresh partial.
@@ -94,7 +128,6 @@ function customize_partial_blogdescription()
 {
   bloginfo('description');
 }
-
 
 
 /**

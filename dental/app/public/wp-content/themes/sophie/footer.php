@@ -57,9 +57,9 @@
       <?php bloginfo('name'); ?>
     </div>
     <div class="address">
-      <div>〒123-45678</div>
-      <div>東京都渋谷区代々木1-23-45</div>
-      <div>TEL 03-123-4567 / FAX 03-123-4567</div>
+      <div>〒<?php echo get_theme_mod("shop_zip") ?></div>
+      <div><?php echo get_theme_mod("shop_address") ?></div>
+      <div>TEL <?php $tel = get_theme_mod('shop_tel'); ?><?php echo format_phone_number($tel) ?> / FAX <?php $fax = get_theme_mod('shop_fax'); ?><?php echo format_phone_number($fax) ?></div>
     </div>
   </div>
 </div>

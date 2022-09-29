@@ -1,10 +1,13 @@
-#archive-qa{
+#archive-news{
   .container{
     max-width: 1000px;
   }
-  .qa-article {
+  .news-article {
     cursor: pointer;
-    .qa-title {
+    &:first-child {
+      border-top: 1px solid #104088;
+    }
+    .news-title {
       border-bottom: 1px solid #104088;
       &.ui-state-active {
         .bi-arrow-down-circle {
