@@ -317,6 +317,9 @@ function news_post_type()
 }
 add_action('init', 'news_post_type');
 
+
+
+
 // $starter_content = [
 //   'posts' => [
 //     'custom' => [
